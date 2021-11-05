@@ -31,7 +31,7 @@ export default function ViewEvent({ navigation }) {
       <View style={globalStyles.bottomWrapper}>
         <Button
           color='#75022c'
-          title="Create / Join Event"
+          title="Join Event"
           onPress={() => {
             //  1. Navigate to the Details route with params
             navigation.navigate('Join Event');
