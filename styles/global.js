@@ -65,22 +65,26 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#75022c',
     borderRadius: 100,
   },
+
   logo: {
-    width: '100%',
-    height: '25%',
-    marginBottom: '20%',
+    flex:4,
+    width:"100%",
+    height:"100%",
+    resizeMode: "contain",
+    paddingTop: 10,
+    marginTop:20,
   },
+
   slogan: {
     fontSize: 22,
     fontWeight: 'bold',
     fontStyle: 'italic',
     position: 'relative',
-    marginBottom: '65%',
   },
+
   login_button_location: {
     width: 200,
     height: 50,
-    marginBottom: '25%',
   },
   // __tried to set button style but couldn't get it to work
   // __had to hard code it in
@@ -92,7 +96,6 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     // marginTop: 15,
-    justifyContent: 'flex-end',
   },
   act_pic: {
     position: 'absolute',
@@ -201,4 +204,29 @@ export const globalStyles = StyleSheet.create({
   subTitle: {
     fontWeight: "bold",
   },
+
+  loginInputContainer: {
+    flex:6,
+    width:"100%",
+    marginTop: 80,
+    justifyContent: "flex-start",
+    alignItems: "center",
+
+  },
+
+  loginInputBox: {
+    width: "60%",
+    paddingHorizontal: 3,
+    marginTop:5,
+  },
+
+  loginInput: {
+    marginVertical: 5,
+    borderColor: "#75022c",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 5,
+  },
+
 });
