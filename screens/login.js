@@ -40,16 +40,16 @@ export default function LoginScreen({ navigation }) {
               "This is where you will login <3",
               [
                 {
-                  text: "Continue as Guest",
-                  onPress: () => { navigation.navigate('Home', {}); }
-                },
-                {
-                  text: "Cancel",
+                  text: "        Cancel",
                   onPress: () => console.log("Cancel Pressed"),
                   style: "cancel"
                 },
                 {
-                  text: "OK",
+                  text: "        Guest",
+                  onPress: () => { navigation.navigate('Home', {}); }
+                },
+                {
+                  text: "        Knight",
                   onPress: () => { navigation.navigate('Home', {}); }
                 }
               ]
