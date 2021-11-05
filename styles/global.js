@@ -258,4 +258,21 @@ export const globalStyles = StyleSheet.create({
     paddingHorizontal: 5,
   },
 
+  //Join event
+
+  joinEventContaier: {
+    flex:10,
+    textAlign: "center",
+  },
+  joinEventPickerBox: {
+     height: 40,
+     width: 315,
+     borderColor:"#75022c",
+     borderWidth:1,
+     alignSelf:"stretch",
+     justifyContent:"center",
+     borderRadius: 5,
+     marginTop:15,
+     marginBottom:30,
+  },
 });
