@@ -201,4 +201,37 @@ export const globalStyles = StyleSheet.create({
   subTitle: {
     fontWeight: "bold",
   },
+  account: {
+  flex:1,
+  // flexDirection: "column",
+  // alignContent: 'center'
+  },
+  accountInfo: {
+    alignItems: 'center',
+    fontSize: 20,
+  },
+  profileButton: {
+    borderWidth: 5,
+    borderColor: '#75022c',
+    alignItems: 'center',
+    width: 150,
+    height: 150,
+    borderRadius: 100,
+    alignSelf: 'center',
+    // backgroundImage: "url(" + "https://c1.wallpaperflare.com/preview/558/669/73/puppy-yorkshire-terrier- puppy-yorkie-puppy-pet.jpg" + ")",
+    // backgroundPosition: 'center',
+    // backgroundSize: 'cover',
+    // backgroundRepeat: 'no-repeat',
+    marginTop: '5%',
+    marginBottom: '5%',
+    
+  },
+  deleteAccountButton: {
+    borderColor: '#FF0000',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    marginTop: '75%',
+    paddingHorizontal: 50,
+  },
+
 });
