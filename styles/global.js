@@ -167,6 +167,9 @@ export const globalStyles = StyleSheet.create({
     resizeMode: 'stretch',
     height: 100,
     justifyContent: 'center',
+    borderRadius: 10,
+    borderWidth: 10,
+    borderColor: '#ffffff'
   },
 
   eventContainer: {
@@ -176,10 +179,12 @@ export const globalStyles = StyleSheet.create({
     fontSize: 22,
     lineHeight: 25,
     fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'black',
+    textAlign: 'left',
+    marginLeft: '5%',
+    textAlignVertical: 'bottom',
+    color: 'white',
 
-    backgroundColor: '#E0E0E0',
+    backgroundColor: '#ffffff00',
   },
   //Event Description in view Event page
   eventViewEventDescription: {
