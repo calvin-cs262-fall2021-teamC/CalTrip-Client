@@ -205,28 +205,37 @@ export const globalStyles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  loginInputContainer: {
-    flex:6,
-    width:"100%",
-    marginTop: 80,
-    justifyContent: "flex-start",
-    alignItems: "center",
-
+  account: {
+  flex:1,
+  // flexDirection: "column",
+  // alignContent: 'center'
   },
-
-  loginInputBox: {
-    width: "60%",
-    paddingHorizontal: 3,
-    marginTop:5,
+  accountInfo: {
+    alignItems: 'center',
+    fontSize: 20,
   },
-
-  loginInput: {
-    marginVertical: 5,
-    borderColor: "#75022c",
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 5,
+  profileButton: {
+    borderWidth: 5,
+    borderColor: '#75022c',
+    alignItems: 'center',
+    width: 150,
+    height: 150,
+    borderRadius: 100,
+    alignSelf: 'center',
+    // backgroundImage: "url(" + "https://c1.wallpaperflare.com/preview/558/669/73/puppy-yorkshire-terrier- puppy-yorkie-puppy-pet.jpg" + ")",
+    // backgroundPosition: 'center',
+    // backgroundSize: 'cover',
+    // backgroundRepeat: 'no-repeat',
+    marginTop: '5%',
+    marginBottom: '5%',
+    
+  },
+  deleteAccountButton: {
+    borderColor: '#FF0000',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    marginTop: '75%',
+    paddingHorizontal: 50,
   },
 
 });
