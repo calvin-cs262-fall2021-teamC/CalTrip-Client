@@ -12,7 +12,7 @@ import Account from './screens/account';
 import CreateEvent from './screens/create_event';
 import JoinEvent from './screens/join_event';
 import ViewEvent from './screens/view_event';
-
+import SignupScreen from './screens/signup';
 
 function ski_trip({ navigation }) {
   return (
@@ -182,7 +182,11 @@ export default function App() {
           )
         })
         } />
+
+        <Stack.Screen name="Signup" component={SignupScreen} />
+
         <Stack.Screen name="My Account" component={Account} />
+
         <Stack.Screen name="Create Event" component={CreateEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
           headerRight: () => (
             <Header navigation={navigation} />
