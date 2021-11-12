@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Image } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-export default function ViewEvent({ navigation }) {
+export default function ViewEvent({ route, navigation }) {
   return (
     <View style={globalStyles.contentContainer}>
       <View style={globalStyles.default}>
@@ -13,15 +13,12 @@ export default function ViewEvent({ navigation }) {
           }}
         />
 
-        <Text style={{ fontWeight: "bold", padding: 15, fontSize: 24, }} >Skiing</Text>
+        <Text style={{ fontWeight: "bold", padding: 15, fontSize: 24, }}> {route.params.name}</Text>
 
         <View style={globalStyles.eventViewTextContainer}>
-          <Text style={globalStyles.eventViewEventDescription}>Are you ready to go for  skiing?
-            Actually, no, there is no snow yet...But if there was, here are the details of the event!</Text>
-
-          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> Cannonsburg Ski Area</  Text>
-
-          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: </Text>$30</Text>
+          <Text style={globalStyles.eventViewEventDescription}>{route.params.description}</Text>
+          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
+          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
         </View>
 
       </View>
