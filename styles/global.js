@@ -80,6 +80,15 @@ export const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontStyle: 'italic',
     position: 'relative',
+    color: 'black',
+  },
+
+  signupLink: {
+    fontSize: 22,
+    position: 'relative',
+    color: '#0000FF',
+    marginTop:20,
+    textDecorationLine: 'underline',
   },
 
   login_button_location: {
@@ -275,4 +284,6 @@ export const globalStyles = StyleSheet.create({
      marginTop:15,
      marginBottom:30,
   },
+
+
 });
