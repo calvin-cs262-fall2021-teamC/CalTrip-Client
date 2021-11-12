@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, Button, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function HomeScreen({ navigation }) {
@@ -14,6 +14,7 @@ export default function HomeScreen({ navigation }) {
   
 
   return (
+    <ScrollView>
     <View style={globalStyles.homepage}>
       <View style={globalStyles.eventsViewEventsContainer}>
         <TouchableOpacity
@@ -48,15 +49,20 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           onPress={() => navigation.navigate('View Event', {})}>
+          <ImageBackground source={skydive_image} style={globalStyles.eventsListImageBackground}>
+            <Text style={globalStyles.textInsideContainer}>Sky Diving</Text>
+          </ImageBackground>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('View Event', {})}>
           <ImageBackground source={beach_image} style={globalStyles.eventsListImageBackground}>
             <Text style={globalStyles.textInsideContainer}>Beach</Text>
           </ImageBackground>
         </TouchableOpacity>
 
-
       </View>
     
-
       <View style={globalStyles.wrapper}>
         <View style={globalStyles.buttonv}>
           <Button
@@ -66,6 +72,7 @@ export default function HomeScreen({ navigation }) {
               //  1. Navigate to the Details route with params
               navigation.navigate('Month', {});
             }} />
+
         </View>
         <TouchableOpacity
           style={globalStyles.plusButton}
@@ -74,5 +81,6 @@ export default function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 }
