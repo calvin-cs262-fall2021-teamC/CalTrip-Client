@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, View, Text, Button, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { homeStyles } from '../styles/home_style';
 
 export default function HomeScreen({ navigation }) {
   const [isLoading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <ScrollView>
-      <View style={globalStyles.homepage}>
+      <View style={homeStyles.homepage}>
         {isLoading ? <ActivityIndicator /> : (
           <FlatList
             data={data}
@@ -26,8 +26,8 @@ export default function HomeScreen({ navigation }) {
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => navigation.navigate('View Event', item)}>
-                <ImageBackground source={test_image} style={globalStyles.eventsListImageBackground}>
-                  <Text style={globalStyles.textInsideContainer}>{item.name}</Text>
+                <ImageBackground source={test_image} style={homeStyles.eventsListImageBackground}>
+                  <Text style={homeStyles.textInsideContainer}>{item.name}</Text>
                 </ImageBackground>
               </TouchableOpacity>
             )}
@@ -36,8 +36,8 @@ export default function HomeScreen({ navigation }) {
 
       </View>
 
-      <View style={globalStyles.wrapper}>
-        <View style={globalStyles.buttonv}>
+      <View style={homeStyles.wrapper}>
+        <View style={homeStyles.month_button}>
           <Button
             color='#75022c'
             title="Month"
@@ -48,9 +48,9 @@ export default function HomeScreen({ navigation }) {
 
         </View>
         <TouchableOpacity
-          style={globalStyles.plusButton}
+          style={homeStyles.plusButton}
           onPress={() => navigation.navigate('Create Event', {})}>
-          <Text style={globalStyles.plus}>+</Text>
+          <Text style={homeStyles.plus}>+</Text>
         </TouchableOpacity>
       </View>
     </ScrollView >

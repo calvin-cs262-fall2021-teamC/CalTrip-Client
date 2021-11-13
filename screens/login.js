@@ -1,40 +1,40 @@
 import React, { useState } from 'react';
 import { Text, Image, View, Button, Alert, TextInput, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { loginStyles } from '../styles/login_style';
 
 
 export default function LoginScreen({ navigation }) {
 
   return (
-    <View style={globalStyles.container}>
+    <View style={loginStyles.container}>
 
-      <Image source={{ uri: 'https://github.com/calvin-cs262-fall2021-teamC/CalTrip-project/blob/main/images/logos/Color%20logo%20-%20no%20background.png?raw=true' }} style={globalStyles.logo} />
+      <Image source={{ uri: 'https://github.com/calvin-cs262-fall2021-teamC/CalTrip-project/blob/main/images/logos/Color%20logo%20-%20no%20background.png?raw=true' }} style={loginStyles.logo} />
 
-      <Text style={globalStyles.slogan}>"We're going places."</Text>
+      <Text style={loginStyles.slogan}>"We're going places."</Text>
 
 
-      <View style={globalStyles.loginInputContainer}>
+      <View style={loginStyles.loginInputContainer}>
 
-        <View style={globalStyles.loginInputBox}>
-          <TextInput style={globalStyles.loginInput}
+        <View style={loginStyles.loginInputBox}>
+          <TextInput style={loginStyles.loginInput}
           placeholder=" Email"
           />
         </View>
 
-        <View style={globalStyles.loginInputBox}>
-          <TextInput style={globalStyles.loginInput}
+        <View style={loginStyles.loginInputBox}>
+          <TextInput style={loginStyles.loginInput}
           placeholder=" Password"
           />
         </View>
 
         <TouchableOpacity
           onPress={() => navigation.navigate('Signup', {})}>
-          <Text style={globalStyles.signupLink}>Signup</Text>
+          <Text style={loginStyles.signupLink}>Signup</Text>
         </TouchableOpacity>
 
       </View>
 
-      <View style={globalStyles.login_button_location}>
+      <View style={loginStyles.login_button_location}>
 
         <Button
           color='#75022c'

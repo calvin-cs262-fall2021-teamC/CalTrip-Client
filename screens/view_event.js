@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Image } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { eventStyles } from '../styles/event_style';
 
 export default function ViewEvent({ route, navigation }) {
   return (
-    <View style={globalStyles.contentContainer}>
-      <View style={globalStyles.default}>
+    <View style={eventStyles.contentContainer}>
+      <View style={eventStyles.default}>
         <Image
           style={{ width: "100%", height: 200 }}
           source={{
@@ -15,17 +15,17 @@ export default function ViewEvent({ route, navigation }) {
 
         <Text style={{ fontWeight: "bold", padding: 15, fontSize: 24, }}> {route.params.name}</Text>
 
-        <View style={globalStyles.eventViewTextContainer}>
-          <Text style={globalStyles.eventViewEventDescription}>{route.params.description}</Text>
-          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
-          <Text style={globalStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
+        <View style={eventStyles.eventViewTextContainer}>
+          <Text style={eventStyles.eventViewEventDescription}>{route.params.description}</Text>
+          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
+          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
         </View>
 
       </View>
 
 
 
-      <View style={globalStyles.bottomWrapper}>
+      <View style={eventStyles.bottomWrapper}>
         <Button
           color='#75022c'
           title="Join Event"

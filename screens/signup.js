@@ -1,48 +1,48 @@
 import React from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { signupStyles } from '../styles/signup_style';
 
 export default function SignupScreen({ navigation }) {
   return (
-    <View style={globalStyles.contentContainer}>
+    <View style={signupStyles.contentContainer}>
     <ScrollView>
 
-      <View style={globalStyles.createEventContentContainer}>
+      <View style={signupStyles.createEventContentContainer}>
 
-        <View style={globalStyles.createEventInputBox}>
-          <Text style={globalStyles.subTitle}>First name</Text>
-          <TextInput style={globalStyles.inputBox}
+        <View style={signupStyles.createEventInputBox}>
+          <Text style={signupStyles.subTitle}>First name</Text>
+          <TextInput style={signupStyles.inputBox}
             />
         </View>
 
-        <View style={globalStyles.createEventInputBox}>
-          <Text style={globalStyles.subTitle}>Last Name</Text>
-          <TextInput style={globalStyles.inputBox}
+        <View style={signupStyles.createEventInputBox}>
+          <Text style={signupStyles.subTitle}>Last Name</Text>
+          <TextInput style={signupStyles.inputBox}
         />
         </View>
 
-        <View style={globalStyles.createEventInputBox}>
-          <Text style={globalStyles.subTitle}>Email</Text>
-          <TextInput style={globalStyles.inputBox}
+        <View style={signupStyles.createEventInputBox}>
+          <Text style={signupStyles.subTitle}>Email</Text>
+          <TextInput style={signupStyles.inputBox}
             />
         </View>
 
-        <View style={globalStyles.createEventInputBox}>
-          <Text style={globalStyles.subTitle}>Password</Text>
-          <TextInput secureTextEntry={true} style={globalStyles.inputBox}
+        <View style={signupStyles.createEventInputBox}>
+          <Text style={signupStyles.subTitle}>Password</Text>
+          <TextInput secureTextEntry={true} style={signupStyles.inputBox}
             />
         </View>
 
-        <View style={globalStyles.createEventInputBox}>
-          <Text style={globalStyles.subTitle}>Repeate Password</Text>
-          <TextInput secureTextEntry={true} style={globalStyles.inputBox}
+        <View style={signupStyles.createEventInputBox}>
+          <Text style={signupStyles.subTitle}>Repeat Password</Text>
+          <TextInput secureTextEntry={true} style={signupStyles.inputBox}
             />
         </View>
 
       </View>
       </ScrollView>
 
-    <View style={globalStyles.bottomWrapper}>
+    <View style={signupStyles.bottomWrapper}>
       <Button
         color='#75022c'
         title="Create account"
