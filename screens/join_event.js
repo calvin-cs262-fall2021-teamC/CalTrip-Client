@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Picker, StyleSheet, Alert } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { joinStyles } from '../styles/join_style';
 
 export default function JoinEvent({ navigation }) {
   const [selectedValue, setSelectedValue] = useState("java");
 
   return (
-    <View style={globalStyles.contentContainer}>
-      <View style={globalStyles.joinEventContaier}>
-        <Text style={globalStyles.title}>Skiing</Text>
-        <Text style={globalStyles.subTitle}>Are you a rider or driver?</Text>
+    <View style={joinStyles.contentContainer}>
+      <View style={joinStyles.joinEventContainer}>
+        <Text style={joinStyles.title}>Skiing</Text>
+        <Text style={joinStyles.subTitle}>Are you a rider or driver?</Text>
 
-        <View style={globalStyles.joinEventPickerBox}>
+        <View style={joinStyles.joinEventPickerBox}>
           <Picker
             selectedValue={selectedValue}
             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
@@ -22,9 +22,9 @@ export default function JoinEvent({ navigation }) {
             </Picker>
         </View>
 
-        <Text style={globalStyles.subTitle}>If driver, how many people can you take?</Text>
+        <Text style={joinStyles.subTitle}>If driver, how many people can you take?</Text>
 
-        <View style={globalStyles.joinEventPickerBox}>
+        <View style={joinStyles.joinEventPickerBox}>
           <Picker
             selectedValue={selectedValue}
             onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
@@ -45,7 +45,7 @@ export default function JoinEvent({ navigation }) {
         </View>
         </View>
 
-        <View style={globalStyles.bottomWrapper}>
+        <View style={joinStyles.bottomWrapper}>
           <Button
             color= '#75022c'
             title="Join"

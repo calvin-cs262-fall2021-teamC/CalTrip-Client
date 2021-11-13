@@ -1,11 +1,11 @@
 import React from 'react';
 import { Image, View, Button, Text } from 'react-native';
-import { globalStyles } from '../styles/global';
+import { accountStyles } from '../styles/account_style';
 
 export default function Account({ route, navigation }) {
 
   return (
-    <View style={globalStyles.account}>
+    <View style={accountStyles.account}>
 
         <View style={{alignItems:"center", paddingTop: 50,}}>
         <Image
@@ -15,13 +15,13 @@ export default function Account({ route, navigation }) {
           }}
         />
         </View>
-        <View style={globalStyles.accountInfo}>
-          <Text style={globalStyles.accountInfo}>John Smith</Text>
-          <Text style={globalStyles.accountInfo}>js@students.calvin.edu</Text>
-          <Text style={globalStyles.accountInfo}>123-456-7891</Text>
+        <View style={accountStyles.accountInfo}>
+          <Text style={accountStyles.accountInfo}>John Smith</Text>
+          <Text style={accountStyles.accountInfo}>js@students.calvin.edu</Text>
+          <Text style={accountStyles.accountInfo}>123-456-7891</Text>
         </View>
 
-        <View style={globalStyles.deleteAccountButton}>
+        <View style={accountStyles.deleteAccountButton}>
           <Button
             color='#FF1800'
             title="Delete Account"/>
