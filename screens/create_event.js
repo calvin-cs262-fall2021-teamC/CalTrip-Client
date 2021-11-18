@@ -1,8 +1,10 @@
-import React from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView } from 'react-native';
+import React, {useState} from 'react';
+import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
 import { eventStyles } from '../styles/event_style';
 
 export default function CreateEvent({ navigation }) {
+  const [selectedValue, setSelectedValue] = useState("java");
+
   return (
       <View style={eventStyles.contentContainer}>
       <ScrollView>
@@ -51,6 +53,33 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
         </View>
+
+        <View style={{width:"100%", margin:5, paddingHorizontal:3}}>
+          <Text style={eventStyles.subTitle}>Category</Text>
+        </View>
+        <View style={eventStyles.createEventPickerBox}>
+
+          <Picker
+            selectedValue={selectedValue}
+            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            >
+            <Picker.Item label="Choose a category" value="NULL" />
+            <Picker.Item label="Agritourism" value="agritourism"/>
+            <Picker.Item label="Art" value="art" />
+            <Picker.Item label="Beach" value="beach" />
+            <Picker.Item label="Camping" value="camping" />
+            <Picker.Item label="City" value="city" />
+            <Picker.Item label="Food" value="food" />
+            <Picker.Item label="Grocery" value="sport" />
+            <Picker.Item label="Hiking" value="hiking" />
+            <Picker.Item label="Nature" value="nature" />
+            <Picker.Item label="Shopping" value="shopping" />
+            <Picker.Item label="Sports" value="sports" />
+            <Picker.Item label="Water sport" value="water_sport" />
+            <Picker.Item label="Winter sport" value="winter_sport" />
+            </Picker>
+        </View>
+
         </ScrollView>
 
         <View style={eventStyles.bottomWrapper}>
