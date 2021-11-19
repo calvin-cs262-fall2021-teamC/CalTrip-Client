@@ -13,7 +13,7 @@ export default function ViewEvent({ route, navigation }) {
           }}
         />
 
-        <Text style={{ fontWeight: "bold", padding: 15, fontSize: 24, }}> {route.params.name}</Text>
+        <Text style={{ fontWeight: "bold", padding: 15, fontSize: 24, }}> {route.params.title}</Text>
 
         <View style={eventStyles.eventViewTextContainer}>
           <Text style={eventStyles.eventViewEventDescription}>{route.params.description}</Text>

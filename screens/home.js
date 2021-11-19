@@ -33,7 +33,7 @@ export default function HomeScreen({ navigation }) {
               <TouchableOpacity
                 onPress={() => navigation.navigate('View Event', item)}>
                 <ImageBackground source={test_image} style={homeStyles.eventsListImageBackground}>
-                  <Text style={homeStyles.textInsideContainer}>{item.name}</Text>
+                  <Text style={homeStyles.textInsideContainer}>{item.title}</Text>
                 </ImageBackground>
               </TouchableOpacity>
             )}
