@@ -37,7 +37,7 @@ export const eventStyles = StyleSheet.create({
     borderBottomColor: "#75022c",
     borderBottomWidth: 1,
   },
-  
+
   createEventInputBox: {
     width: "100%",
     margin: 5,
@@ -50,4 +50,20 @@ export const eventStyles = StyleSheet.create({
     paddingTop: 30,
   },
 
+  createEventPickerBox: {
+     height: 40,
+     width: '97%',
+     margin: 8,
+     borderColor:"#75022c",
+     borderWidth:1,
+     alignSelf:"stretch",
+     justifyContent:"center",
+     borderRadius: 5,
+     marginTop:15,
+     marginBottom:30,
+  },
+
+  createEventPickerItem: {
+    backgroundColor: "grey",
+  },
 });
