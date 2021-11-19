@@ -7,6 +7,7 @@ export const homeStyles = StyleSheet.create({
     backgroundColor: '#fff',
     width: '100%',
     flexDirection: 'column',
+    padding: 10,
   },
 
   eventsListImageBackground: {
@@ -15,7 +16,7 @@ export const homeStyles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     borderWidth: 10,
-    borderColor: '#ffffff'
+    borderColor: '#ffffff',
   },
   
   textInsideContainer: {
@@ -26,25 +27,29 @@ export const homeStyles = StyleSheet.create({
     marginLeft: '5%',
     textAlignVertical: 'bottom',
     color: 'white',
-
     backgroundColor: '#ffffff00',
   },
 
-  // wrapper for both "month" and "+" buttons
+  // wrapper for both "+" button
   wrapper: {
     flex: 1,
     padding: 20,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
   },
 
   // month button
   month_button: {
-    paddingVertical: 5,
-    paddingHorizontal: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 40,
     flex: 1,
     justifyContent: 'center',
+    alignItems: "center",
+    width: 335,
+    height: 50,
+    backgroundColor: '#75022c',
+    borderRadius: 100,
   },
 
   // style for + button
@@ -63,7 +68,7 @@ export const homeStyles = StyleSheet.create({
   plus: {
     fontSize: 35,
     fontWeight: 'bold',
-    position: 'absolute',
+    position: 'relative',
     color: '#fff',
   },
 

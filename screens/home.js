@@ -19,6 +19,12 @@ export default function HomeScreen({ navigation }) {
   return (
     <ScrollView>
       <View style={homeStyles.homepage}>
+        <View style={homeStyles.month_button}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Month', {})}>
+          <Text style={homeStyles.textInsideContainer}>Months</Text>
+        </TouchableOpacity>
+        </View>
         {isLoading ? <ActivityIndicator /> : (
           <FlatList
             data={data}
@@ -33,26 +39,16 @@ export default function HomeScreen({ navigation }) {
             )}
           />
         )}
-
       </View>
 
       <View style={homeStyles.wrapper}>
-        <View style={homeStyles.month_button}>
-          <Button
-            color='#75022c'
-            title="Month"
-            onPress={() => {
-              //  1. Navigate to the Details route with params
-              navigation.navigate('Month', {});
-            }} />
-
-        </View>
         <TouchableOpacity
           style={homeStyles.plusButton}
           onPress={() => navigation.navigate('Create Event', {})}>
           <Text style={homeStyles.plus}>+</Text>
         </TouchableOpacity>
       </View>
+
     </ScrollView >
   );
 }
