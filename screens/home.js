@@ -19,12 +19,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <ScrollView>
       <View style={homeStyles.homepage}>
-        <View style={homeStyles.month_button}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Month', {})}>
-          <Text style={homeStyles.textInsideContainer}>Months</Text>
-        </TouchableOpacity>
-        </View>
+
         {isLoading ? <ActivityIndicator /> : (
           <FlatList
             data={data}
@@ -52,3 +47,10 @@ export default function HomeScreen({ navigation }) {
     </ScrollView >
   );
 }
+  // MONTH BUTTON > PLACE IN EMPTY SPOT UNDER '<View style={homeStyles.homepage}>'
+  // <View style={homeStyles.month_button}>
+  // <TouchableOpacity
+  //   onPress={() => navigation.navigate('Month', {})}>
+  //   <Text style={homeStyles.textInsideContainer}>Months</Text>
+  // </TouchableOpacity>
+  // </View>

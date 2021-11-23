@@ -39,18 +39,18 @@ export const homeStyles = StyleSheet.create({
     alignItems: 'flex-end',
   },
 
-  // month button
-  month_button: {
-    paddingVertical: 10,
-    paddingHorizontal: 40,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: "center",
-    width: 335,
-    height: 50,
-    backgroundColor: '#75022c',
-    borderRadius: 100,
-  },
+  // // month button
+  // month_button: {
+  //   paddingVertical: 10,
+  //   paddingHorizontal: 40,
+  //   flex: 1,
+  //   justifyContent: 'center',
+  //   alignItems: "center",
+  //   width: '100%',
+  //   height: 50,
+  //   backgroundColor: '#75022c',
+  //   borderRadius: 100,
+  // },
 
   // style for + button
   plusButton: {
