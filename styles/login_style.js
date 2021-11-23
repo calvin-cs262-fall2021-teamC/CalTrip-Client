@@ -60,7 +60,7 @@ export const loginStyles = StyleSheet.create({
       login_button_location: {
         marginTop: '2%',
         width: 100,
-        height: 10,
+        height: 50,
     },
     
 });
