@@ -48,16 +48,18 @@ export const loginStyles = StyleSheet.create({
         paddingHorizontal: 5,
     },
 
-    signupLink: {
-        fontSize: 22,
+    signupButton: {
+        fontSize: 20,
         position: 'relative',
-        color: '#0000FF',
-        marginTop:20,
-        textDecorationLine: 'underline',
+        color: '#75022c',
+        marginTop:"30%",
+        width: 200,
+        height: 50,
     },
     
       login_button_location: {
-        width: 200,
+        marginTop: '2%',
+        width: 100,
         height: 50,
     },
     
