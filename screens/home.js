@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, View, Text, Button, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
+import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import { homeStyles } from '../styles/home_style';
+import images from '../imageEvent/images'
 
 export default function HomeScreen({ navigation }) {
   const [isLoading, setLoading] = useState(true);
@@ -14,8 +16,6 @@ export default function HomeScreen({ navigation }) {
       .finally(() => setLoading(false));
   }, []);
 
-  const test_image = { uri: "https://coresites-cdn-adm.imgix.net/mpora_new/wp-content/uploads/2016/07/SkiWords.jpg?fit=crop" };
-
   return (
     <ScrollView>
       <View style={homeStyles.homepage}>
@@ -27,7 +27,7 @@ export default function HomeScreen({ navigation }) {
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => navigation.navigate('View Event', item)}>
-                <ImageBackground source={test_image} style={homeStyles.eventsListImageBackground}>
+                <ImageBackground source={images[item.category]} style={homeStyles.eventsListImageBackground}>
                   <Text style={homeStyles.textInsideContainer}>{item.title}</Text>
                 </ImageBackground>
               </TouchableOpacity>
