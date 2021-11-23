@@ -12,6 +12,7 @@ export default function LoginScreen({ navigation }) {
 
       <Text style={loginStyles.slogan}>"We're going places."</Text>
 
+      
 
       <View style={loginStyles.loginInputContainer}>
 
@@ -27,18 +28,10 @@ export default function LoginScreen({ navigation }) {
           />
         </View>
 
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Signup', {})}>
-          <Text style={loginStyles.signupLink}>Signup</Text>
-        </TouchableOpacity>
-
-      </View>
-
-      <View style={loginStyles.login_button_location}>
-
+        <View style={loginStyles.login_button_location}>
         <Button
           color='#75022c'
-          title="Login to continue"
+          title="Login"
           onPress={() => {
             // alert reference: https://reactnative.dev/docs/alert
             Alert.alert(
@@ -61,8 +54,21 @@ export default function LoginScreen({ navigation }) {
               ]
             );
           }}
-          />
+        />
+        </View>
+
+        <View style={loginStyles.signupButton}>
+        <Button
+          color='#75022c'
+          title="Sign Up"
+          onPress={() => navigation.navigate('Signup', {})}>
+          <Text style={loginStyles.signupLink}>Sign Up</Text>
+        </Button>
+        </View>
+
       </View>
+
+
     </View>
   );
 }
