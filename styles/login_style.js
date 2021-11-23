@@ -52,7 +52,7 @@ export const loginStyles = StyleSheet.create({
         fontSize: 20,
         position: 'relative',
         color: '#75022c',
-        marginTop:"40%",
+        marginTop:"30%",
         width: 200,
         height: 50,
     },
