@@ -56,7 +56,7 @@ export default function JoinEvent({ navigation }) {
                 [
                   {
                     text: "OK",
-                    onPress: () => { navigation.navigate('View Event'); }
+                    onPress: () => { navigation.navigate('Home', {}); }
                   }
                 ]
               );
