@@ -23,7 +23,7 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <View style={loginStyles.loginInputBox}>
-          <TextInput style={loginStyles.loginInput}
+          <TextInput secureTextEntry={true} style={loginStyles.loginInput}
           placeholder=" Password"
           />
         </View>

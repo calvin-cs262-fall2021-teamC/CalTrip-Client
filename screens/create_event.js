@@ -3,11 +3,13 @@ import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Pic
 import { eventStyles } from '../styles/event_style';
 
 export default function CreateEvent({ navigation }) {
-  const [selectedValue, setSelectedValue] = useState("java");
   const [inputTitle, setTitle] = useState('');
   const [inputDescription, setDescription] = useState('');
   const [inputLocation, setLocation] = useState('');
   const [inputPrice, setPrice] = useState('');
+  // for event category
+  const [selectedValue, setSelectedValue] = useState('');
+
 
   const sendData = async () => {
     try {
@@ -21,7 +23,8 @@ export default function CreateEvent({ navigation }) {
           title: inputTitle,
           description: inputDescription,
           location: inputLocation,
-          price: inputPrice
+          price: inputPrice,
+          category: selectedValue
         })
       });
     }
@@ -83,22 +86,22 @@ export default function CreateEvent({ navigation }) {
 
           <Picker
             selectedValue={selectedValue}
-            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            onValueChange={(itemValue) => setSelectedValue(itemValue)}
           >
-            <Picker.Item label="Choose a category" value="NULL" />
-            <Picker.Item label="Agritourism" value="agritourism" />
-            <Picker.Item label="Art" value="art" />
-            <Picker.Item label="Beach" value="beach" />
-            <Picker.Item label="Camping" value="camping" />
-            <Picker.Item label="City" value="city" />
-            <Picker.Item label="Food" value="food" />
-            <Picker.Item label="Grocery" value="sport" />
-            <Picker.Item label="Hiking" value="hiking" />
-            <Picker.Item label="Nature" value="nature" />
-            <Picker.Item label="Shopping" value="shopping" />
-            <Picker.Item label="Sports" value="sports" />
-            <Picker.Item label="Water sport" value="water_sport" />
-            <Picker.Item label="Winter sport" value="winter_sport" />
+            <Picker.Item label="Choose a category" value={0} />
+            <Picker.Item label="Agritourism" value={1} />
+            <Picker.Item label="Art" value={2} />
+            <Picker.Item label="Beach" value={3} />
+            <Picker.Item label="Camping" value={4} />
+            <Picker.Item label="City" value={5} />
+            <Picker.Item label="Food" value={6} />
+            <Picker.Item label="Grocery" value={7} />
+            <Picker.Item label="Hiking" value={8} />
+            <Picker.Item label="Nature" value={9} />
+            <Picker.Item label="Shopping" value={10} />
+            <Picker.Item label="Sports" value={11} />
+            <Picker.Item label="Water sport" value={12} />
+            <Picker.Item label="Winter sport" value={13} />
           </Picker>
         </View>
 
