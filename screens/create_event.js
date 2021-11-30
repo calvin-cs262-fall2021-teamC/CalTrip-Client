@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
 import { eventStyles } from '../styles/event_style';
+import { TextInputMask } from 'react-native-masked-text';
 
 export default function CreateEvent({ navigation }) {
   const [inputTitle, setTitle] = useState('');
   const [inputDescription, setDescription] = useState('');
-  const [inputStartDate, setStartDate] = useState('');
-  const [inputEndDate, setEndDate] = useState('');
   const [inputLocation, setLocation] = useState('');
   const [inputPrice, setPrice] = useState('');
+  const [inputStartDate, setStartDate] = useState('');
+  const [inputEndDate, setEndDate] = useState('');
   // for event category
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -24,10 +25,10 @@ export default function CreateEvent({ navigation }) {
         body: JSON.stringify({
           title: inputTitle,
           description: inputDescription,
-          startDate: inputStartDate,
-          endDate: inputEndDate,
           location: inputLocation,
           price: inputPrice,
+          startDate: inputStartDate,
+          endDate: inputEndDate,
           category: selectedValue
         })
       });
@@ -35,6 +36,8 @@ export default function CreateEvent({ navigation }) {
     catch (error) {
       console.error(error);
     }
+    const isValid = dateTimeField.isValid()
+    console.log(isValid)
   }
 
   return (
@@ -62,26 +65,6 @@ export default function CreateEvent({ navigation }) {
           </View>
 
           <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>Start Date</Text>
-            <TextInput style={eventStyles.inputBox}
-              keyboardType='numeric'
-              onChangeText={number => setStartDate(number)}
-              value={inputStartDate}
-              placeholder="YYYYMMDD"
-            />
-          </View>
-
-          <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>End Date</Text>
-            <TextInput style={eventStyles.inputBox}
-              keyboardType='numeric'
-              onChangeText={number => setEndDate(number)}
-              value={inputEndDate}
-              placeholder="YYYYMMDD"
-            />
-          </View>
-
-          <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Address</Text>
             <TextInput style={eventStyles.inputBox}
               onChangeText={text => setLocation(text)}
@@ -100,12 +83,32 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          <View style={eventStyles.createEventInputBox}>
+            <Text style={eventStyles.subTitle}>Start Date</Text>
+            <TextInput style={eventStyles.inputBox}
+              keyboardType='numeric'
+              onChangeText={number => setStartDate(number)}
+              value={inputStartDate}
+              placeholder="Type the start date..."
+            />
+          </View>
+
+          <View style={eventStyles.createEventInputBox}>
+            <Text style={eventStyles.subTitle}>End Date</Text>
+            <TextInput style={eventStyles.inputBox}
+              keyboardType='numeric'
+              onChangeText={number => setEndDate(number)}
+              value={inputEndDate}
+              placeholder="Type the end date..."
+            />
+          </View>
 
         </View>
 
         <View style={{ width: "100%", margin: 5, paddingHorizontal: 3 }}>
           <Text style={eventStyles.subTitle}>Category</Text>
         </View>
+
         <View style={eventStyles.createEventPickerBox}>
 
           <Picker
