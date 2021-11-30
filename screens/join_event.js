@@ -8,7 +8,7 @@ export default function JoinEvent({ navigation }) {
   return (
     <View style={joinStyles.contentContainer}>
       <View style={joinStyles.joinEventContainer}>
-        <Text style={joinStyles.title}>Skiing</Text>
+        <Text style={joinStyles.title}>Select the following</Text>
         <Text style={joinStyles.subTitle}>Are you a rider or driver?</Text>
 
         <View style={joinStyles.joinEventPickerBox}>
