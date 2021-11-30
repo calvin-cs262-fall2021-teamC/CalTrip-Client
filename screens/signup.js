@@ -5,7 +5,7 @@ import { signupStyles } from '../styles/signup_style';
 export default function SignupScreen({ navigation }) {
   const [inputFirstName, setFirstName] = useState('');
   const [inputLastName, setLastName] = useState('');
-  const [inputEmail, setEmail] = useState('');
+  const [inputEmailAddress, setEmailAddress] = useState('');
   const [inputPassword, setPassword] = useState('');
 
   const sendData = async () => {
@@ -19,8 +19,8 @@ export default function SignupScreen({ navigation }) {
         body: JSON.stringify({
           firstName: inputFirstName,
           lastName: inputLastName,
-          email: inputEmail,
-          password: inputPassword,
+          emailAddress: inputEmailAddress,
+          password: inputPassword
         })
       });
     }
@@ -45,7 +45,7 @@ export default function SignupScreen({ navigation }) {
         <View style={signupStyles.createEventInputBox}>
           <Text style={signupStyles.subTitle}>Last Name</Text>
           <TextInput style={signupStyles.inputBox}
-            onChangeText={text => setFirstName(text)}
+            onChangeText={text => setLastName(text)}
             value={inputLastName}
             />
         </View>
@@ -53,15 +53,15 @@ export default function SignupScreen({ navigation }) {
         <View style={signupStyles.createEventInputBox}>
           <Text style={signupStyles.subTitle}>Email</Text>
           <TextInput style={signupStyles.inputBox}
-            onChangeText={text => setFirstName(text)}
-            value={inputEmail}
+            onChangeText={text => setEmailAddress(text)}
+            value={inputEmailAddress}
             />
         </View>
 
         <View style={signupStyles.createEventInputBox}>
           <Text style={signupStyles.subTitle}>Password</Text>
           <TextInput secureTextEntry={true} style={signupStyles.inputBox}
-            onChangeText={text => setFirstName(text)}
+            onChangeText={text => setPassword(text)}
             value={inputPassword}
             />
         </View>
@@ -80,6 +80,7 @@ export default function SignupScreen({ navigation }) {
         color='#75022c'
         title="Create account"
         onPress={() => {
+          sendData();
             Alert.alert(
               "Congratulations!",
               "You successfully created an account.",
