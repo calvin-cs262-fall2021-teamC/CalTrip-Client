@@ -33,10 +33,12 @@ export const homeStyles = StyleSheet.create({
   // wrapper for both "+" button
   wrapper: {
     flex: 1,
-    padding: 20,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    padding: 10,
+    position: 'absolute',
+    bottom: 0,
+    alignSelf:'flex-end',
+    marginBottom: '5%',
+    marginLeft: '5%'
   },
 
   // // month button
@@ -54,22 +56,23 @@ export const homeStyles = StyleSheet.create({
 
   // style for + button
   plusButton: {
-    borderWidth: 1,
-    borderColor: '#75022c',
+    flex: 1,
+    borderWidth: 4,
+    borderColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-    width: 50,
-    height: 50,
+    width: 86,
+    height: 71,
     backgroundColor: '#75022c',
-    borderRadius: 100,
+    borderRadius: 70,
   },
 
   // text style of +
-  plus: {
-    fontSize: 35,
+  plus: { 
+    fontSize: 55,
     fontWeight: 'bold',
-    position: 'relative',
     color: '#fff',
+    alignSelf:'center',
+    bottom: 3,
   },
 
 });
