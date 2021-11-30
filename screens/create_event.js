@@ -5,6 +5,8 @@ import { eventStyles } from '../styles/event_style';
 export default function CreateEvent({ navigation }) {
   const [inputTitle, setTitle] = useState('');
   const [inputDescription, setDescription] = useState('');
+  const [inputStartDate, setStartDate] = useState('');
+  const [inputEndDate, setEndDate] = useState('');
   const [inputLocation, setLocation] = useState('');
   const [inputPrice, setPrice] = useState('');
   // for event category
@@ -22,6 +24,8 @@ export default function CreateEvent({ navigation }) {
         body: JSON.stringify({
           title: inputTitle,
           description: inputDescription,
+          startDate: inputStartDate,
+          endDate: inputEndDate,
           location: inputLocation,
           price: inputPrice,
           category: selectedValue
@@ -54,6 +58,26 @@ export default function CreateEvent({ navigation }) {
               onChangeText={text => setDescription(text)}
               value={inputDescription}
               placeholder="Introduce the details of the event..."
+            />
+          </View>
+
+          <View style={eventStyles.createEventInputBox}>
+            <Text style={eventStyles.subTitle}>Start Date</Text>
+            <TextInput style={eventStyles.inputBox}
+              keyboardType='numeric'
+              onChangeText={number => setStartDate(number)}
+              value={inputStartDate}
+              placeholder="YYYYMMDD"
+            />
+          </View>
+
+          <View style={eventStyles.createEventInputBox}>
+            <Text style={eventStyles.subTitle}>End Date</Text>
+            <TextInput style={eventStyles.inputBox}
+              keyboardType='numeric'
+              onChangeText={number => setEndDate(number)}
+              value={inputEndDate}
+              placeholder="YYYYMMDD"
             />
           </View>
 
