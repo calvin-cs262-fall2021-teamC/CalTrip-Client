@@ -13,8 +13,6 @@ export const loginStyles = StyleSheet.create({
         width:"100%",
         height:"100%",
         resizeMode: "contain",
-        paddingTop: 10,
-        marginTop:20,
     },
 
     slogan: {
@@ -28,7 +26,7 @@ export const loginStyles = StyleSheet.create({
     loginInputContainer: {
         flex:6,
         width:"100%",
-        marginTop: 80,
+        marginTop: 20,
         justifyContent: "flex-start",
         alignItems: "center",
     },
@@ -36,7 +34,7 @@ export const loginStyles = StyleSheet.create({
     loginInputBox: {
         width: "60%",
         paddingHorizontal: 3,
-        marginTop:5,
+        marginTop: 5,
     },
     
     loginInput: {
@@ -52,15 +50,27 @@ export const loginStyles = StyleSheet.create({
         fontSize: 20,
         position: 'relative',
         color: '#75022c',
-        marginTop:"30%",
-        width: 200,
+        marginTop:"22%",
+        width: 100,
         height: 50,
     },
     
-      login_button_location: {
+    login_button_location: {
         marginTop: '2%',
         width: 100,
         height: 50,
     },
+
+    textOR: {
+      paddingBottom: '4%',
+    },
+    
+    guestButton: {
+      fontSize: 20,
+      position: 'relative',
+      color: '#75022c',
+      width: 150,
+      height: 50,
+    }
     
 });

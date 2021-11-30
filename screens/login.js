@@ -32,29 +32,8 @@ export default function LoginScreen({ navigation }) {
         <Button
           color='#75022c'
           title="Login"
-          onPress={() => {
-            // alert reference: https://reactnative.dev/docs/alert
-            Alert.alert(
-              "Login Page",
-              "This is where you will login <3",
-              [
-                {
-                  text: "        Cancel",
-                  onPress: () => console.log("Cancel Pressed"),
-                  style: "cancel"
-                },
-                {
-                  text: "        Guest",
-                  onPress: () => { navigation.navigate('Home', {}); }
-                },
-                {
-                  text: "        Knight",
-                  onPress: () => { navigation.navigate('Home', {}); }
-                }
-              ]
-            );
-          }}
-        />
+          onPress={() => navigation.navigate('Home', {})}>
+        </Button>
         </View>
 
         <View style={loginStyles.signupButton}>
@@ -66,8 +45,19 @@ export default function LoginScreen({ navigation }) {
         </Button>
         </View>
 
-      </View>
+        <View style={loginStyles.textOR}>
+          <Text> ───── OR ───── </Text>
+        </View>
 
+        <View style={loginStyles.guestButton}>
+            <Button
+              color='#75022c'
+              title="Contiue as Guest"
+              onPress={() => navigation.navigate('Home', {})}>
+            </Button>
+        </View>
+
+      </View>
 
     </View>
   );
