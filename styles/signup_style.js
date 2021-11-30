@@ -8,11 +8,6 @@ export const signupStyles = StyleSheet.create({
     paddingHorizontal: 20,
   },
 
-  createEventContentContainer: {
-    flex: 10,
-    textAlign: 'center',
-  },
-
   createEventInputBox: {
     width: "100%",
     margin: 5,
@@ -35,4 +30,7 @@ export const signupStyles = StyleSheet.create({
     paddingTop: 30,
   },
 
+  scrollViewHolder: {
+    flex:10,
+  }
 });
