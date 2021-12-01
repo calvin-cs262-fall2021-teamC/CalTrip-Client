@@ -17,7 +17,7 @@ export const joinStyles = StyleSheet.create({
   // Title of the event
   title: {
     fontWeight: "bold",
-    fontSize: 32,
+    fontSize: 30,
     paddingBottom: 20,
   },
 
