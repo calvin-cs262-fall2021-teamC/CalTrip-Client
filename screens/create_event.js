@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
 import { eventStyles } from '../styles/event_style';
-import { TextInputMask } from 'react-native-masked-text';
 
 export default function CreateEvent({ navigation }) {
   const [inputTitle, setTitle] = useState('');
