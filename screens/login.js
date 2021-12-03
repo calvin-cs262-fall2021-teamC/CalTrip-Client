@@ -46,7 +46,7 @@ export default function LoginScreen({ navigation }) {
         </View>
 
         <View style={loginStyles.textOR}>
-          <Text> ───── OR ───── </Text>
+          <Text> ─────── OR ─────── </Text>
         </View>
 
         <View style={loginStyles.guestButton}>
