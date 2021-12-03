@@ -3,7 +3,8 @@ import { View, Text, TextInput, Button, TouchableOpacity, Picker, StyleSheet, Al
 import { joinStyles } from '../styles/join_style';
 
 export default function JoinEvent({ navigation }) {
-  const [selectedValue, setSelectedValue] = useState("java");
+  const [selectedStatus, setSelectedStatus] = useState("");
+  const [selectedSeatsNum, setSelectedSeatsNum] = useState("");
 
   return (
     <View style={joinStyles.contentContainer}>
@@ -13,8 +14,8 @@ export default function JoinEvent({ navigation }) {
 
         <View style={joinStyles.joinEventPickerBox}>
           <Picker
-            selectedValue={selectedValue}
-            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            selectedValue={selectedStatus}
+            onValueChange={(itemValue, itemIndex) => setSelectedStatus(itemValue)}
             >
             <Picker.Item label="Choose a role" value="NULL" />
             <Picker.Item label="Rider" value="rider" />
@@ -26,8 +27,8 @@ export default function JoinEvent({ navigation }) {
 
         <View style={joinStyles.joinEventPickerBox}>
           <Picker
-            selectedValue={selectedValue}
-            onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            selectedValue={selectedSeatsNum}
+            onValueChange={(itemValue, itemIndex) => setSelectedSeatsNum(itemValue)}
             >
             <Picker.Item label="Choose a number" value="NULL" />
             <Picker.Item label="1" value="1" />
