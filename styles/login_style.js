@@ -46,31 +46,19 @@ export const loginStyles = StyleSheet.create({
         paddingHorizontal: 5,
     },
 
-    signupButton: {
-        fontSize: 20,
-        position: 'relative',
-        color: '#75022c',
-        marginTop:"22%",
-        width: 100,
-        height: 50,
-    },
-    
     login_button_location: {
         marginTop: '2%',
         width: 100,
         height: 50,
     },
 
-    textOR: {
-      paddingBottom: '4%',
+    signupButton: {
+        fontSize: 20,
+        position: 'relative',
+        color: '#75022c',
+        marginTop:"45%",
+        width: 200,
+        height: 50,
     },
-    
-    guestButton: {
-      fontSize: 20,
-      position: 'relative',
-      color: '#75022c',
-      width: 200,
-      height: 50,
-    }
     
 });
