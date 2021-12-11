@@ -45,18 +45,6 @@ export default function LoginScreen({ navigation }) {
         </Button>
         </View>
 
-        <View style={loginStyles.textOR}>
-          <Text> ─────── OR ─────── </Text>
-        </View>
-
-        <View style={loginStyles.guestButton}>
-            <Button
-              color='#75022c'
-              title="Contiue as Guest"
-              onPress={() => navigation.navigate('Home', {})}>
-            </Button>
-        </View>
-
       </View>
 
     </View>
