@@ -12,7 +12,7 @@ export default function LoginScreen({ navigation }) {
 
       <Text style={loginStyles.slogan}>"We're going places."</Text>
 
-      
+
 
       <View style={loginStyles.loginInputContainer}>
 
@@ -43,6 +43,18 @@ export default function LoginScreen({ navigation }) {
           onPress={() => navigation.navigate('Signup', {})}>
           <Text style={loginStyles.signupLink}>Sign Up</Text>
         </Button>
+        </View>
+
+        <View style={loginStyles.textOR}>
+          <Text> ─────── OR ─────── </Text>
+        </View>
+
+        <View style={loginStyles.guestButton}>
+            <Button
+              color='#75022c'
+              title="Contiue as Guest"
+              onPress={() => navigation.navigate('Guest Home', {})}>
+            </Button>
         </View>
 
       </View>

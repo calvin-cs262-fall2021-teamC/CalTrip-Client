@@ -36,7 +36,7 @@ export const loginStyles = StyleSheet.create({
         paddingHorizontal: 3,
         marginTop: 5,
     },
-    
+
     loginInput: {
         marginVertical: 5,
         borderColor: "#75022c",
@@ -60,5 +60,23 @@ export const loginStyles = StyleSheet.create({
         width: 200,
         height: 50,
     },
-    
+    signupButton: {
+        fontSize: 20,
+        position: 'relative',
+        color: '#75022c',
+        marginTop:"22%",
+        width: 100,
+        height: 50,
+    },
+
+    textOR: {
+        paddingBottom: '4%',
+    },
+    guestButton: {
+        fontSize: 20,
+        position: 'relative',
+        color: '#75022c',
+        width: 200,
+        height: 50,
+    }
 });

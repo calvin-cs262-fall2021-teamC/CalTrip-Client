@@ -15,6 +15,14 @@ import JoinEvent from './screens/join_event';
 import ViewEvent from './screens/view_event';
 import SignupScreen from './screens/signup';
 
+
+import GuestHomeScreen from "./guest_screens/home";
+import GuestMonthsScreen from "./guest_screens/months";
+import GuestHelpScreen from "./guest_screens/helpPage";
+import GuestViewEvent from './guest_screens/view_event';
+
+
+
 function ski_trip({ navigation }) {
   return (
     <View style={globalStyles.container}>
@@ -37,9 +45,6 @@ export default function App() {
       {/* The landing page will be the Login page */}
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
-          headerRight: () => (
-            <Header navigation={navigation} />
-          )
         })
         } />
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
@@ -88,6 +93,24 @@ export default function App() {
           )
         })
         } />
+
+
+
+
+        <Stack.Screen name="Guest Home" component={GuestHomeScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
+        })
+        } />
+
+        <Stack.Screen name="Guest View Event" component={GuestViewEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
+        })
+        } />
+
+        <Stack.Screen name="Guest Month" component={GuestMonthsScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
+        })
+        } />
+
+
+
 
         <Stack.Screen name="Help Screen" component={HelpScreen} />
       </Stack.Navigator>
