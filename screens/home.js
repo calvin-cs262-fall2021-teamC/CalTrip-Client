@@ -31,8 +31,7 @@ export default function HomeScreen({ navigation }) {
             keyExtractor={({ id }, index) => id.toString()}
             renderItem={({ item }) => (
               <TouchableOpacity
-                onPress={() => navigation.navigate('View Event', item)}>
-                  //onPress={() => prac()}>
+                 onPress={() => navigation.navigate('View Event', item)}>
                 <ImageBackground source={images[item.category]} style={homeStyles.eventsListImageBackground}>
                   <Text style={homeStyles.textInsideContainer}>{item.title}</Text>
                 </ImageBackground>

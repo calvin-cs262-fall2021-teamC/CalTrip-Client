@@ -24,7 +24,6 @@ export default function SignupScreen({ navigation }) {
         })
       });
 
-      alert( JSON.stringify(response) );
     }
     catch (error) {
       console.error(error);

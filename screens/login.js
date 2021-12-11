@@ -5,10 +5,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function LoginScreen({ navigation }) {
-
+  const [isLoginCorrect, setLoginCorrect] = useState(false);
   const [inputEmailAddress, setEmailAddress] = useState('');
   const [inputPassword, setPassword] = useState('');
-  const [error, setError] = useState("FALSE");
+  const [status, setStatus] = useState('');
   const sendData = () => {
     fetch("https://caltrip-service.herokuapp.com/user", {
       method: "POST",
@@ -22,18 +22,21 @@ export default function LoginScreen({ navigation }) {
       })
     })
     .then((response) => {
-      if(response.status === 500) throw Error('login error')
-      setError("FALSE")
-      return response
+      if(response.status == 200) {
+        setLoginCorrect(true)
+        return response
+      }
+      else {
+        setLoginCorrect(false)
+        alert(isLoginCorrect)
+        throw Error('Wrong Email or Password')
+      }
     })
     .then((response) => response.json())
     .then((data) => AsyncStorage.setItem('emailAddress', data.emailaddress))
     .then((data) => AsyncStorage.getItem('emailAddress'))
     // .then((email) => alert(email))
-    .catch((err) => {
-      alert(err)
-    })
-
+    .catch((err) => alert(err))
   }
   return (
     <View style={loginStyles.container}>
@@ -49,45 +52,44 @@ export default function LoginScreen({ navigation }) {
         <View style={loginStyles.loginInputBox}>
           <TextInput style={loginStyles.loginInput}
           placeholder=" Email"
-          onChangeText={text => {
-            setEmailAddress(text)
-          }}
+          onChangeText={text => setEmailAddress(text)}
           value={inputEmailAddress}
           />
         </View>
 
         <View style={loginStyles.loginInputBox}>
           <TextInput secureTextEntry={true} style={loginStyles.loginInput}
-          placeholder=" Password"
-          onChangeText={text => {
-            setPassword(text)
-          }}
-          value={inputPassword}
+            placeholder=" Password"
+            onChangeText={text => setPassword(text)}
+            value={inputPassword}
           />
         </View>
 
         <View style={loginStyles.login_button_location}>
-        <Button
-          color='#75022c'
-          title="Login"
-          onPress={() => {
-            sendData();
-            navigation.navigate('Home', {})}
-          }>
-        </Button>
+          <Button
+            color='#75022c'
+            title="Login"
+            onPress={() => {
+              sendData();
+              if (isLoginCorrect) {
+                navigation.navigate('Home', {})
+              }
+
+          }}>
+          </Button>
         </View>
 
         <View style={loginStyles.signupButton}>
-        <Button
-          color='#75022c'
-          title="Sign Up"
-          onPress={() => navigation.navigate('Signup', {})}>
-          <Text style={loginStyles.signupLink}>Sign Up</Text>
-        </Button>
+          <Button
+            color='#75022c'
+            title="Sign Up"
+            onPress={() => navigation.navigate('Signup', {})}>
+            <Text style={loginStyles.signupLink}>Sign Up</Text>
+            </Button>
         </View>
 
         <View style={loginStyles.textOR}>
-          <Text> ─────── OR ─────── </Text>
+            <Text> ─────── OR ─────── </Text>
         </View>
 
         <View style={loginStyles.guestButton}>
