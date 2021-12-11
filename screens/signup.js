@@ -23,6 +23,8 @@ export default function SignupScreen({ navigation }) {
           password: inputPassword
         })
       });
+
+      alert( JSON.stringify(response) );
     }
     catch (error) {
       console.error(error);

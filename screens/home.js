@@ -3,11 +3,17 @@ import { ActivityIndicator, FlatList, View, Text, Button, TouchableOpacity, Imag
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import { homeStyles } from '../styles/home_style';
 import images from '../imageEvent/images'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function HomeScreen({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+  const emailAddress = '';
+  const prac = () => {
+    AsyncStorage.getItem('emailAddress')
+    .then((data) => alert(data));
+  }
   useEffect(() => {
     fetch(`https://caltrip-service.herokuapp.com/events`)
       .then((response) => response.json())
@@ -26,6 +32,7 @@ export default function HomeScreen({ navigation }) {
             renderItem={({ item }) => (
               <TouchableOpacity
                 onPress={() => navigation.navigate('View Event', item)}>
+                  //onPress={() => prac()}>
                 <ImageBackground source={images[item.category]} style={homeStyles.eventsListImageBackground}>
                   <Text style={homeStyles.textInsideContainer}>{item.title}</Text>
                 </ImageBackground>

@@ -1,10 +1,40 @@
 import React, { useState } from 'react';
 import { Text, Image, View, Button, Alert, TextInput, TouchableOpacity } from 'react-native';
 import { loginStyles } from '../styles/login_style';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function LoginScreen({ navigation }) {
 
+  const [inputEmailAddress, setEmailAddress] = useState('');
+  const [inputPassword, setPassword] = useState('');
+  const [error, setError] = useState("FALSE");
+  const sendData = () => {
+    fetch("https://caltrip-service.herokuapp.com/user", {
+      method: "POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        emailAddress: inputEmailAddress,
+        password: inputPassword
+      })
+    })
+    .then((response) => {
+      if(response.status === 500) throw Error('login error')
+      setError("FALSE")
+      return response
+    })
+    .then((response) => response.json())
+    .then((data) => AsyncStorage.setItem('emailAddress', data.emailaddress))
+    .then((data) => AsyncStorage.getItem('emailAddress'))
+    // .then((email) => alert(email))
+    .catch((err) => {
+      alert(err)
+    })
+
+  }
   return (
     <View style={loginStyles.container}>
 
@@ -19,12 +49,20 @@ export default function LoginScreen({ navigation }) {
         <View style={loginStyles.loginInputBox}>
           <TextInput style={loginStyles.loginInput}
           placeholder=" Email"
+          onChangeText={text => {
+            setEmailAddress(text)
+          }}
+          value={inputEmailAddress}
           />
         </View>
 
         <View style={loginStyles.loginInputBox}>
           <TextInput secureTextEntry={true} style={loginStyles.loginInput}
           placeholder=" Password"
+          onChangeText={text => {
+            setPassword(text)
+          }}
+          value={inputPassword}
           />
         </View>
 
@@ -32,7 +70,10 @@ export default function LoginScreen({ navigation }) {
         <Button
           color='#75022c'
           title="Login"
-          onPress={() => navigation.navigate('Home', {})}>
+          onPress={() => {
+            sendData();
+            navigation.navigate('Home', {})}
+          }>
         </Button>
         </View>
 
