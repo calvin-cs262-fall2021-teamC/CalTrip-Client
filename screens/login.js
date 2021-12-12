@@ -25,10 +25,10 @@ export default function LoginScreen({ navigation }) {
       if(response.status == 200) {
         setLoginCorrect(true)
         return response
+        login()
       }
       else {
         setLoginCorrect(false)
-        alert(isLoginCorrect)
         throw Error('Wrong Email or Password')
       }
     })
@@ -37,6 +37,14 @@ export default function LoginScreen({ navigation }) {
     .then((data) => AsyncStorage.getItem('emailAddress'))
     // .then((email) => alert(email))
     .catch((err) => alert(err))
+  }
+
+  const login = () => {
+    navigation.reset({
+      index:0
+    })
+    navigation.navigate("Home", {})
+
   }
   return (
     <View style={loginStyles.container}>
@@ -72,7 +80,7 @@ export default function LoginScreen({ navigation }) {
             onPress={() => {
               sendData();
               if (isLoginCorrect) {
-                navigation.navigate('Home', {})
+                navigation.replace('Home', {})
               }
 
           }}>

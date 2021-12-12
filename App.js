@@ -14,7 +14,7 @@ import CreateEvent from './screens/create_event';
 import JoinEvent from './screens/join_event';
 import ViewEvent from './screens/view_event';
 import SignupScreen from './screens/signup';
-
+import SignOut from './shared/signout';
 
 import GuestHomeScreen from "./guest_screens/home";
 import GuestMonthsScreen from "./guest_screens/months";
@@ -45,9 +45,15 @@ export default function App() {
       {/* The landing page will be the Login page */}
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerTitle: "",
+          headerRight: () => (
+            <HelpShared navigation={navigation} />
+          )
         })
         } />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
+
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview'}, ({ navigation }) => ({
+          headerTitle: "Events",
           headerRight: () => (
             <Header navigation={navigation} />
           )
@@ -62,8 +68,9 @@ export default function App() {
         } />
 
         <Stack.Screen name="My Account" component={Account} options={({ navigation }) => ({
+          headerTitle: "",
           headerRight: () => (
-            <HelpShared navigation={navigation} />
+            <SignOut navigation={navigation} />
           )
         })
         } />
