@@ -69,7 +69,7 @@ export const loginStyles = StyleSheet.create({
         position: 'relative',
         color: '#75022c',
         marginTop:"22%",
-        width: 100,
+        width: 200,
         height: 50,
     },
 
