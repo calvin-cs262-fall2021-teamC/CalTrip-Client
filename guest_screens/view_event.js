@@ -26,7 +26,7 @@ export default function GuestViewEvent({ route, navigation }) {
 
         <View style={eventStyles.eventViewTextContainer}>
           <Text style={eventStyles.eventViewEventDescription}>{route.params.description}</Text>
-          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Date:</Text> {route.params.startdate}</Text>
+          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Date:</Text> {route.params.to_char}</Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
         </View>

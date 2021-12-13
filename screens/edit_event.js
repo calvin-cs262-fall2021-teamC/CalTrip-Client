@@ -13,6 +13,7 @@ export default function EditEvent({ route, navigation }) {
     const [editLocation, changeLocation] = useState('');
     const [editPrice, changePrice] = useState('');
     const [editStartDate, changeStartDate] = useState('');
+  
     // for event category
     const [editSelectedValue, changeSelectedValue] = useState('');
 
@@ -99,7 +100,6 @@ export default function EditEvent({ route, navigation }) {
                             placeholder="YYYY/MM/DD"
                         />
                     </View>
-
                 </View>
 
                 {/* Create category of events */}

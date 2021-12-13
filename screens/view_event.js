@@ -16,7 +16,7 @@ export default function ViewEvent({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  {/* Fetches the specific event */}
+  {/* Fetches the specific event */ }
   useEffect(() => {
     fetch(`https://caltrip-service.herokuapp.com/events/${route.params.id}/users`)
       .then((response) => response.json())
@@ -42,7 +42,7 @@ export default function ViewEvent({ route, navigation }) {
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}> NAME  ||  STATUS  || SEATS AVAILABLE</Text></Text>
-          
+
           {isLoading ? <ActivityIndicator /> : (
             <FlatList
               data={data}
@@ -52,10 +52,10 @@ export default function ViewEvent({ route, navigation }) {
               )}
             />
           )}
-        
+
         </View>
       </View>
-      
+
       {/* Create a join event button */}
       <View style={eventStyles.bottomWrapper}>
         <View style={eventStyles.buttons}>

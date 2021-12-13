@@ -24,7 +24,7 @@ export const accountStyles = StyleSheet.create({
 
     accountButtonContainer: {
       borderColor: '#75022c',
-
+      paddingBottom: 10,
       flex: 1,
       paddingHorizontal: 50,
     }

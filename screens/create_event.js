@@ -153,7 +153,7 @@ export default function CreateEvent({ navigation }) {
       </ScrollView>
 
       {/* Confirm creation of the event */}
-      <View style={eventStyles.bottomWrapper}>
+      <View style={eventStyles.createEventButton}>
         <Button
           marginBottom='5%'
           color='#75022c'

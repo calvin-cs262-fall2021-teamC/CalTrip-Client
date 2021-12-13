@@ -51,7 +51,7 @@ export default function HelpScreen({ route, navigation }) {
       <Text style={helpStyles.headerText}>Section 5: My Account </Text>
       <Text style={helpStyles.bodyText1}>1. Press the button in the top right corner   </Text>
       <Text style={helpStyles.bodyText2}>a. View your account details </Text>
-      <Text style={helpStyles.bodyText2}>b. delete your account </Text>
+      <Text style={helpStyles.bodyText2}>b. Delete your account </Text>
       <Text style={helpStyles.bodyText3}>i. Press the “Delete Account” button </Text>
 
     </ScrollView>
