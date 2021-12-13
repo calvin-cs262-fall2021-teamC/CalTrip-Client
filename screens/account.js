@@ -9,6 +9,7 @@ import React from 'react';
 import { Image, View, Button, Text, Alert } from 'react-native';
 import { accountStyles } from '../styles/account_style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { CommonActions } from '@react-navigation/native';
 
 
 /*
@@ -16,11 +17,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 */
 export default function Account({ route, navigation }) {
 
-
-  const prac = () => {
-    AsyncStorage.getItem('emailAddress')
-    .then((data) => alert(data));
-  }
+  //const prac = () => {
+  //  AsyncStorage.getItem('emailAddress')
+  //  .then((data) => alert(data));
+  //}
 
   const delete_check = () => {
     Alert.alert(
@@ -50,16 +50,31 @@ export default function Account({ route, navigation }) {
         emailAddress: emailAddress
       })
     })
-    .then((resp) => alert(JSON.stringify(resp)))
     .catch((err) => alert(err))
-    alert("Account is successfully deleted.")
-    navigation.reset({
-      index:0
-    })
-    navigation.navigate("Login", {})
+    Alert.alert(
+      "Account is successfully deleted.",
+      "We will miss you!",
+    [
+      {
+        text: "Ok",
+        onPress: () => goLoginPage()
+      }
+    ],
+  {
+    onDismiss: () => goLoginPage(),
+  })
   }
 
-
+  const goLoginPage = () => {
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [
+          { name: 'Login' }
+        ]
+      })
+    )
+  }
 
   return (
     <View style={accountStyles.account}>
@@ -76,7 +91,7 @@ export default function Account({ route, navigation }) {
 
          {/* Display the personal information */}
         <View style={accountStyles.accountInfo}>
-          <Text style={accountStyles.accountInfo}>{data.id}</Text>
+          <Text style={accountStyles.accountInfo}>John White</Text>
           <Text style={accountStyles.accountInfo}>js@students.calvin.edu</Text>
           <Text style={accountStyles.accountInfo}>123-456-7891</Text>
         </View>
