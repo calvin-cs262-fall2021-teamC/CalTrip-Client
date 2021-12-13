@@ -2,12 +2,14 @@
  * create_event.js was created to allow users to create events to post. When an event is created it is POST-ed to the database server and displayed on the home screen.
  * Navigation [FROM] home.js [TO] home.js, helpPage.js
  * create_event.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
-*/ 
+*/
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text'
 import { eventStyles } from '../styles/event_style';
+import { CommonActions } from '@react-navigation/native';
+
 
 /*
  * The function CreateEvent() performs the action of taking an input and creating an event.
@@ -48,6 +50,17 @@ export default function CreateEvent({ navigation }) {
     const isValid = dateTimeField.isValid()
     console.log(isValid)
   }
+
+  const goHome = () => {
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [
+          { name: 'Home' }
+        ]
+      })
+    )
+  };
 
   {/* This returns the page Create event */}
   return (
@@ -174,7 +187,7 @@ export default function CreateEvent({ navigation }) {
               [
                 {
                   text: "OK",
-                  onPress: () => { navigation.navigate('Home'); }
+                  onPress: () => goHome()
                 }
               ]
             );
