@@ -21,22 +21,22 @@ export default function LoginScreen({ navigation }) {
         password: inputPassword
       })
     })
-    .then((response) => {
-      if(response.status == 200) {
-        setLoginCorrect(true)
-        return response
-      }
-      else {
-        setLoginCorrect(false)
-        alert(isLoginCorrect)
-        throw Error('Wrong Email or Password')
-      }
-    })
-    .then((response) => response.json())
-    .then((data) => AsyncStorage.setItem('emailAddress', data.emailaddress))
-    .then((data) => AsyncStorage.getItem('emailAddress'))
-    // .then((email) => alert(email))
-    .catch((err) => alert(err))
+      .then((response) => {
+        if (response.status == 200) {
+          setLoginCorrect(true)
+          return response
+        }
+        else {
+          setLoginCorrect(false)
+          alert(isLoginCorrect)
+          throw Error('Wrong Email or Password')
+        }
+      })
+      .then((response) => response.json())
+      .then((data) => AsyncStorage.setItem('emailAddress', data.emailaddress))
+      .then((data) => AsyncStorage.getItem('emailAddress'))
+      // .then((email) => alert(email))
+      .catch((err) => alert(err))
   }
   return (
     <View style={loginStyles.container}>
@@ -51,9 +51,9 @@ export default function LoginScreen({ navigation }) {
 
         <View style={loginStyles.loginInputBox}>
           <TextInput style={loginStyles.loginInput}
-          placeholder=" Email"
-          onChangeText={text => setEmailAddress(text)}
-          value={inputEmailAddress}
+            placeholder=" Email"
+            onChangeText={text => setEmailAddress(text)}
+            value={inputEmailAddress}
           />
         </View>
 
@@ -75,29 +75,29 @@ export default function LoginScreen({ navigation }) {
                 navigation.navigate('Home', {})
               }
 
-          }}>
+            }}>
           </Button>
         </View>
 
         <View style={loginStyles.signupButton}>
           <Button
             color='#75022c'
-            title="Sign Up"
+            title="Create Account"
             onPress={() => navigation.navigate('Signup', {})}>
             <Text style={loginStyles.signupLink}>Sign Up</Text>
-            </Button>
+          </Button>
         </View>
 
         <View style={loginStyles.textOR}>
-            <Text> ─────── OR ─────── </Text>
+          <Text> ─────── OR ─────── </Text>
         </View>
 
         <View style={loginStyles.guestButton}>
-            <Button
-              color='#75022c'
-              title="Contiue as Guest"
-              onPress={() => navigation.navigate('Guest Home', {})}>
-            </Button>
+          <Button
+            color='#75022c'
+            title="Contiue as Guest"
+            onPress={() => navigation.navigate('Guest Home', {})}>
+          </Button>
         </View>
 
       </View>

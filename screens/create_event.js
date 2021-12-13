@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
+import { TextInputMask } from 'react-native-masked-text'
 import { eventStyles } from '../styles/event_style';
 
 export default function CreateEvent({ navigation }) {
@@ -84,21 +85,29 @@ export default function CreateEvent({ navigation }) {
 
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Start Date</Text>
-            <TextInput style={eventStyles.inputBox}
+            <TextInputMask style={eventStyles.inputBox}
+              type={'datetime'}
               keyboardType='numeric'
+              options={{
+                format: 'YYYY/MM/DD'
+              }}
               onChangeText={number => setStartDate(number)}
               value={inputStartDate}
-              placeholder="Type the start date..."
+              placeholder="YYYY/MM/DD"
             />
           </View>
 
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>End Date</Text>
-            <TextInput style={eventStyles.inputBox}
+            <TextInputMask style={eventStyles.inputBox}
+              type={'datetime'}
               keyboardType='numeric'
-              onChangeText={number => setEndDate(number)}
+              options={{
+                format: 'YYYY/MM/DD'
+              }}
               value={inputEndDate}
-              placeholder="Type the end date..."
+              placeholder="YYYY/MM/DD"
+              onChangeText={number => setEndDate(number)}
             />
           </View>
 

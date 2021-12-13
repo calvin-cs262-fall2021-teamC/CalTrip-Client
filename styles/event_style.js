@@ -21,6 +21,7 @@ export const eventStyles = StyleSheet.create({
 
   eventViewEventDescription: {
     padding: 5,
+    textAlign: "center"
   },
 
   createEventContentContainer: {
@@ -36,6 +37,7 @@ export const eventStyles = StyleSheet.create({
     marginVertical: 5,
     borderBottomColor: "#75022c",
     borderBottomWidth: 1,
+    paddingTop: 5,
   },
 
   createEventInputBox: {
@@ -66,4 +68,8 @@ export const eventStyles = StyleSheet.create({
   createEventPickerItem: {
     backgroundColor: "grey",
   },
+
+  joinedUsers: {
+    textAlign: "center",
+  }
 });

@@ -24,6 +24,7 @@ export const joinStyles = StyleSheet.create({
   // Questions: rider/driver
   subTitle: {
     fontWeight: "bold",
+    paddingTop: 5,
   },
 
   // Number of available seats
@@ -35,8 +36,16 @@ export const joinStyles = StyleSheet.create({
      alignSelf:"stretch",
      justifyContent:"center",
      borderRadius: 5,
-     marginTop:15,
+     marginTop:10,
      marginBottom:30,
   },
   
+  // For ID when joining event
+  inputBox: {
+    marginVertical: 5,
+    borderBottomColor: "#75022c",
+    borderBottomWidth: 1,
+    paddingBottom: 10,
+  },
+
 });
