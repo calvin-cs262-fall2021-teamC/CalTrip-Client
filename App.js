@@ -16,6 +16,7 @@ import Header from "./shared/header";
 import HelpShared from "./shared/help";
 import Account from './screens/account';
 import CreateEvent from './screens/create_event';
+import EditEvent from './screens/edit_event';
 import JoinEvent from './screens/join_event';
 import ViewEvent from './screens/view_event';
 import SignupScreen from './screens/signup';
@@ -76,6 +77,14 @@ export default function App() {
         <Stack.Screen name="Create Event" component={CreateEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
           headerRight: () => (
             <HelpShared navigation={navigation} />
+          )
+        })
+        } />
+
+        {/* This is the Edit event page */}
+        <Stack.Screen name="Edit Event" component={EditEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerRight: () => (
+            <Header navigation={navigation} />
           )
         })
         } />

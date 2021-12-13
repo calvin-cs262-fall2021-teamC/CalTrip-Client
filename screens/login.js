@@ -100,7 +100,7 @@ export default function LoginScreen({ navigation }) {
         <View style={loginStyles.signupButton}>
           <Button
             color='#75022c'
-            title="Sign Up"
+            title="Create Account"
             onPress={() => navigation.navigate('Signup', {})}>
             <Text style={loginStyles.signupLink}>Sign Up</Text>
             </Button>
