@@ -24,6 +24,7 @@ export default function SignOut({ navigation }) {
   const signout_check = () => {
     Alert.alert(
       "Are you sure you would like to log out?",
+      "We will miss you",
       [
         {
           text: "Yes",

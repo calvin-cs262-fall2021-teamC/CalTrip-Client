@@ -1,5 +1,5 @@
 /*
- * signup.js was created to allow new users to create an account using their Calvin affiliated email and a personal password. 
+ * signup.js was created to allow new users to create an account using their Calvin affiliated email and a personal password.
  * After completion they are taken back to login with their new information.
  * Navigation [FROM] login.js [TO] login.js, helpPage.js
  * signup.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
@@ -41,6 +41,21 @@ export default function SignupScreen({ navigation }) {
     }
   }
 
+
+  const validateEmail = (text) => {
+    console.log(text);
+let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+if (reg.test(text) === false) {
+  console.log("Email is Not Correct");
+  this.setState({ email: text })
+  return false;
+}
+else {
+  this.setState({ email: text })
+  console.log("Email is Correct");
+}
+  }
+
   return (
     <View style={signupStyles.contentContainer}>
       <View style={signupStyles.scrollViewHolder}>
@@ -67,7 +82,8 @@ export default function SignupScreen({ navigation }) {
             <View style={signupStyles.createEventInputBox}>
               <Text style={signupStyles.subTitle}>Email</Text>
               <TextInput style={signupStyles.inputBox}
-                onChangeText={text => setEmailAddress(text)}
+                onChangeText={text => validateEmail(text),
+                  text => setEmailAddress(text)}
                 value={inputEmailAddress}
                 />
             </View>

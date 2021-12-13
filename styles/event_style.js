@@ -1,5 +1,5 @@
 /* event_style.js was created as a stylesheet for the events screen.
- * event_style.js was created by team CalTrip as a part of CS-262 at Calvin University. 
+ * event_style.js was created by team CalTrip as a part of CS-262 at Calvin University.
  *  The project was completed on 12/13/21.
  */
 import { StyleSheet } from 'react-native';
@@ -54,10 +54,11 @@ export const eventStyles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingTop: 30,
+    height: 100
   },
 
   createEventPickerBox: {
-     height: 40,
+     height: 25,
      width: '97%',
      margin: 8,
      borderColor:"#75022c",
@@ -65,7 +66,7 @@ export const eventStyles = StyleSheet.create({
      alignSelf:"stretch",
      justifyContent:"center",
      borderRadius: 5,
-     marginTop:15,
+     marginTop:10,
      marginBottom:30,
   },
 
