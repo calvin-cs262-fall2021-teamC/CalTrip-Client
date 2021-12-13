@@ -5,7 +5,7 @@
 */
 
 
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Image, View, Button, Text, Alert, FlatList } from 'react-native';
 import { accountStyles } from '../styles/account_style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -32,13 +32,14 @@ export default function Account({ route, navigation }) {
       [
         {
           text: "Yes",
-          onPress: () => deleteAccount() },
+          onPress: () => deleteAccount()
+        },
         {
           text: "No",
-          style:"cancel"
+          style: "cancel"
         }
       ]
-      );
+    );
   };
 
   const deleteAccount = async () => {
@@ -53,19 +54,19 @@ export default function Account({ route, navigation }) {
         emailAddress: emailAddress
       })
     })
-    .catch((err) => alert(err))
+      .catch((err) => alert(err))
     Alert.alert(
       "Account is successfully deleted.",
       "We will miss you!",
-    [
+      [
+        {
+          text: "Ok",
+          onPress: () => goLoginPage()
+        }
+      ],
       {
-        text: "Ok",
-        onPress: () => goLoginPage()
-      }
-    ],
-  {
-    onDismiss: () => goLoginPage(),
-  })
+        onDismiss: () => goLoginPage(),
+      })
   }
 
   const goLoginPage = () => {
@@ -83,11 +84,11 @@ export default function Account({ route, navigation }) {
 
   useEffect(async () => {
     const emailAddress = await AsyncStorage.getItem('emailAddress')
-    fetch("https://caltrip-service.herokuapp.com/users/"+emailAddress)
-    .then((response) => response.json())
-    .then((json) => setData(json))
-    .catch((error) => console.error(error))
-    .finally(() => setLoading(false));
+    fetch("https://caltrip-service.herokuapp.com/users/" + emailAddress)
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }, []);
 
 
@@ -95,15 +96,15 @@ export default function Account({ route, navigation }) {
     <View style={accountStyles.account}>
       <View style={accountStyles.accountInfoContainer}>
         {/* Create a profile picture */}
-        <View style={{alignItems:"center", paddingTop: 50,}}>
-        <Image
-          style={{ width: 200, height: 200, borderRadius: 500, marginBottom:20,}}
-          source={{
-            uri: 'https://c1.wallpaperflare.com/preview/558/669/73/puppy-yorkshire-terrier-puppy-yorkie-puppy-pet.jpg',
-          }}
-        />
+        <View style={{ alignItems: "center", paddingTop: 50, }}>
+          <Image
+            style={{ width: 200, height: 200, borderRadius: 500, marginBottom: 20, }}
+            source={{
+              uri: 'https://c1.wallpaperflare.com/preview/558/669/73/puppy-yorkshire-terrier-puppy-yorkie-puppy-pet.jpg',
+            }}
+          />
         </View>
-         {/* Display the personal information */}
+        {/* Display the personal information */}
         <View style={accountStyles.accountInfo}>
 
           <Text style={accountStyles.accountInfo}>Email: {data.emailaddress}</Text>
@@ -115,11 +116,11 @@ export default function Account({ route, navigation }) {
 
       {/* Create a Delete Account button */}
       <View style={accountStyles.accountButtonContainer}>
-          <Button
-            color='#75022c'
-            title="Delete Account"
-            onPress = {delete_check}
-          />
+        <Button
+          color='#75022c'
+          title="Delete Account"
+          onPress={delete_check}
+        />
       </View>
 
     </View>

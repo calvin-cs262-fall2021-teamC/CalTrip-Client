@@ -13,7 +13,7 @@ export default function EditEvent({ route, navigation }) {
     const [editLocation, changeLocation] = useState('');
     const [editPrice, changePrice] = useState('');
     const [editStartDate, changeStartDate] = useState('');
-    const [editEndDate, changeEndDate] = useState('');
+  
     // for event category
     const [editSelectedValue, changeSelectedValue] = useState('');
 
@@ -32,7 +32,6 @@ export default function EditEvent({ route, navigation }) {
                 location: editLocation,
                 price: editPrice,
                 startDate: editStartDate,
-                endDate: editEndDate,
                 category: editSelectedValue
             })
         })
@@ -101,22 +100,6 @@ export default function EditEvent({ route, navigation }) {
                             placeholder="YYYY/MM/DD"
                         />
                     </View>
-
-                    {/* End date of the event */}
-                    <View style={eventStyles.createEventInputBox}>
-                        <Text style={eventStyles.subTitle}>End Date</Text>
-                        <TextInputMask style={eventStyles.inputBox}
-                            type={'datetime'}
-                            keyboardType='numeric'
-                            options={{
-                                format: 'YYYY/MM/DD'
-                            }}
-                            value={editEndDate}
-                            placeholder="YYYY/MM/DD"
-                            onChangeText={number => changeEndDate(number)}
-                        />
-                    </View>
-
                 </View>
 
                 {/* Create category of events */}

@@ -10,7 +10,6 @@ import { TextInputMask } from 'react-native-masked-text'
 import { eventStyles } from '../styles/event_style';
 import { CommonActions } from '@react-navigation/native';
 
-
 /*
  * The function CreateEvent() performs the action of taking an input and creating an event.
 */
@@ -37,7 +36,7 @@ export default function CreateEvent({ navigation }) {
           description: inputDescription,
           location: inputLocation,
           price: inputPrice,
-          startDate: inputStartDate,
+          startdate: inputStartDate,
           category: selectedValue
         })
       });
@@ -45,8 +44,6 @@ export default function CreateEvent({ navigation }) {
     catch (error) {
       console.error(error);
     }
-    const isValid = dateTimeField.isValid()
-    console.log(isValid)
   }
 
   const goHome = () => {
@@ -110,7 +107,7 @@ export default function CreateEvent({ navigation }) {
 
           {/* Start date of the event */}
           <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>Start Date</Text>
+            <Text style={eventStyles.subTitle}>Date</Text>
             <TextInputMask style={eventStyles.inputBox}
               type={'datetime'}
               keyboardType='numeric'
@@ -122,7 +119,6 @@ export default function CreateEvent({ navigation }) {
               placeholder="YYYY/MM/DD"
             />
           </View>
-
         </View>
 
         {/* Create category of events */}
