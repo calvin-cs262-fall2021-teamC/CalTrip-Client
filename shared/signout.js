@@ -24,7 +24,7 @@ export default function SignOut({ navigation }) {
   const signout_check = () => {
     Alert.alert(
       "Are you sure you would like to log out?",
-      "We will miss you",
+      "We will miss you!",
       [
         {
           text: "Yes",
@@ -39,10 +39,6 @@ export default function SignOut({ navigation }) {
     return (
         <View style={{flexDirection: 'row'}}>
 
-          {/* Help Screen */}
-          <TouchableOpacity onPress={() => navigation.navigate('Help Screen')}>
-              <Text style={{fontSize: 20, paddingRight: 20}}>Help</Text>
-          </TouchableOpacity>
 
           {/* Creates the logout check */}
           <View>

@@ -29,7 +29,7 @@ const Stack = createNativeStackNavigator();
 
 /*
  * The function App() creates all the screens on the stack and exports the default app.
- * Most screens created in this function include a header and navigation to redirect to 
+ * Most screens created in this function include a header and navigation to redirect to
  * the appropriate screen.
 */
 export default function App() {
@@ -49,6 +49,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview'}, ({ navigation }) => ({
           headerTitle: "Events",
           headerRight: () => (
+            <HelpShared navigation={navigation} />,
             <Header navigation={navigation} />
           )
         })
@@ -64,7 +65,7 @@ export default function App() {
 
         {/* This is the My Account page to view personal information*/}
         <Stack.Screen name="My Account" component={Account} options={({ navigation }) => ({
-          headerTitle: "",
+          headerTitle: "My Account",
           headerRight: () => (
             <SignOut navigation={navigation} />
           )
@@ -74,34 +75,42 @@ export default function App() {
         {/* This is the Create event page */}
         <Stack.Screen name="Create Event" component={CreateEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
           headerRight: () => (
-            <Header navigation={navigation} />
+            <HelpShared navigation={navigation} />
           )
         })
         } />
 
         {/* This is the view event page */}
         <Stack.Screen name="View Event" component={ViewEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerTitle: "",
           headerRight: () => (
-            <Header navigation={navigation} />
+            <HelpShared navigation={navigation} />
           )
         })
         } />
 
         {/* This is the join event page */}
         <Stack.Screen name="Join Event" component={JoinEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerTitle: "",
           headerRight: () => (
-            <Header navigation={navigation} />
+            <HelpShared navigation={navigation} />
           )
         })
         } />
 
         {/* This is the Guest home page */}
         <Stack.Screen name="Guest Home" component={GuestHomeScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerRight: () => (
+            <HelpShared navigation={navigation} />
+          )
         })
         } />
 
         {/* This is the Guest view event page */}
         <Stack.Screen name="Guest View Event" component={GuestViewEvent} options={{ title: 'Overview' }, ({ navigation }) => ({
+          headerRight: () => (
+            <HelpShared navigation={navigation} />
+          )
         })
         } />
 
