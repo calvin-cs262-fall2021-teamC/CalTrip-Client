@@ -1,13 +1,24 @@
+/*
+ * join_event.js was created to allow the users to join an event as a rider or driver. 
+ * Navigation [FROM] view_event.js [TO] home.js, helpPage.js
+ * join_event.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
+*/
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Picker, StyleSheet, Alert } from 'react-native';
 import { joinStyles } from '../styles/join_style';
 
+/*
+ * The function JoinEvent() creates a page for joining an event.
+*/
 export default function JoinEvent({ navigation }) {
   const [selectedStatus, setSelectedStatus] = useState("");
   const [selectedSeatsNum, setSelectedSeatsNum] = useState("");
 
   return (
     <View style={joinStyles.contentContainer}>
+
+      {/* Creates a dropdown choice of either rider or driver */}
       <View style={joinStyles.joinEventContainer}>
         <Text style={joinStyles.title}>Select the following</Text>
         <Text style={joinStyles.subTitle}>Are you a rider or driver?</Text>
@@ -25,6 +36,7 @@ export default function JoinEvent({ navigation }) {
 
         <Text style={joinStyles.subTitle}>If driver, how many people can you take?</Text>
 
+        {/* Creates a dropdown choice of available sit in the car */}
         <View style={joinStyles.joinEventPickerBox}>
           <Picker
             selectedValue={selectedSeatsNum}
@@ -44,26 +56,27 @@ export default function JoinEvent({ navigation }) {
             <Picker.Item label="11" value="11" />
             </Picker>
         </View>
-        </View>
+      </View>
 
-        <View style={joinStyles.bottomWrapper}>
-          <Button
-            color= '#75022c'
-            title="Join"
-            onPress={() => {
-              Alert.alert(
-                "Congratulations!",
-                "You successfully joined the trip.",
-                [
-                  {
-                    text: "OK",
-                    onPress: () => { navigation.navigate('Home', {}); }
-                  }
-                ]
-              );
-            }}
-            />
-        </View>
+      {/* Confirm that the user joined an event */}
+      <View style={joinStyles.bottomWrapper}>
+        <Button
+          color= '#75022c'
+          title="Join"
+          onPress={() => {
+            Alert.alert(
+              "Congratulations!",
+              "You successfully joined the trip.",
+              [
+                {
+                  text: "OK",
+                  onPress: () => { navigation.navigate('Home', {}); }
+                }
+              ]
+            );
+          }}
+          />
+      </View>
   </View>
 
   );

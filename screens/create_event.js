@@ -1,7 +1,16 @@
+/*
+ * create_event.js was created to allow users to create events to post. When an event is created it is POST-ed to the database server and displayed on the home screen.
+ * Navigation [FROM] home.js [TO] home.js, helpPage.js
+ * create_event.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
+*/ 
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert, ScrollView, Picker } from 'react-native';
 import { eventStyles } from '../styles/event_style';
 
+/*
+ * The function CreateEvent() performs the action of taking an input and creating an event.
+*/
 export default function CreateEvent({ navigation }) {
   const [inputTitle, setTitle] = useState('');
   const [inputDescription, setDescription] = useState('');
@@ -12,7 +21,7 @@ export default function CreateEvent({ navigation }) {
   // for event category
   const [selectedValue, setSelectedValue] = useState('');
 
-
+  {/* POST the date to the database */}
   const sendData = async () => {
     try {
       const response = await fetch('https://caltrip-service.herokuapp.com/events', {
@@ -39,12 +48,14 @@ export default function CreateEvent({ navigation }) {
     console.log(isValid)
   }
 
+  {/* This returns the page Create event */}
   return (
     <View style={eventStyles.contentContainer}>
       <ScrollView>
 
         <View style={eventStyles.createEventContentContainer}>
 
+          {/* Title of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Title</Text>
             <TextInput style={eventStyles.inputBox}
@@ -54,6 +65,7 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          {/* Description of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Description</Text>
             <TextInput style={eventStyles.inputBox}
@@ -63,6 +75,7 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          {/* Address of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Address</Text>
             <TextInput style={eventStyles.inputBox}
@@ -72,6 +85,7 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          {/* Price of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Price</Text>
             <TextInput style={eventStyles.inputBox}
@@ -82,6 +96,7 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          {/* Start date of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>Start Date</Text>
             <TextInput style={eventStyles.inputBox}
@@ -92,6 +107,7 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
+          {/* End date of the event */}
           <View style={eventStyles.createEventInputBox}>
             <Text style={eventStyles.subTitle}>End Date</Text>
             <TextInput style={eventStyles.inputBox}
@@ -104,10 +120,12 @@ export default function CreateEvent({ navigation }) {
 
         </View>
 
+        {/* Create category of events */}
         <View style={{ width: "100%", margin: 5, paddingHorizontal: 3 }}>
           <Text style={eventStyles.subTitle}>Category</Text>
         </View>
 
+        {/* The categories */}
         <View style={eventStyles.createEventPickerBox}>
 
           <Picker
@@ -133,6 +151,7 @@ export default function CreateEvent({ navigation }) {
 
       </ScrollView>
 
+      {/* Confirm creation of the event */}
       <View style={eventStyles.bottomWrapper}>
         <Button
           marginBottom='5%'

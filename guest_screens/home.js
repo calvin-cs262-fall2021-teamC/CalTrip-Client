@@ -1,13 +1,23 @@
+/*
+ * home.js was created to display the events available to the users using GET from the database. It also is the “post sign-in” hub for all of the functions of the application (account accessibility, viewing an event and help screen).
+ * Navigation [FROM] *.js [TO] *.js
+ * home.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
+*/
+
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, View, Text, Button, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
 import { isRequired } from 'react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType';
 import { homeStyles } from '../styles/home_style';
 import images from '../imageEvent/images'
 
+/*
+ * The function GuestHomeScreen() creates the guest homepage that diplays the events.
+*/
 export default function GuestHomeScreen({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+  {/* Fetches the events created from the database */}
   useEffect(() => {
     fetch(`https://caltrip-service.herokuapp.com/events`)
       .then((response) => response.json())
@@ -18,6 +28,8 @@ export default function GuestHomeScreen({ navigation }) {
 
   return (
       <View style={homeStyles.homepage}>
+
+      {/* Create a scrollview list of events for guests */}
       <ScrollView>
         {isLoading ? <ActivityIndicator /> : (
           <FlatList
@@ -39,10 +51,3 @@ export default function GuestHomeScreen({ navigation }) {
   );
 }
 
-  // MONTH BUTTON > PLACE IN EMPTY SPOT UNDER '<View style={homeStyles.homepage}>'
-  // <View style={homeStyles.month_button}>
-  // <TouchableOpacity
-  //   onPress={() => navigation.navigate('Month', {})}>
-  //   <Text style={homeStyles.textInsideContainer}>Months</Text>
-  // </TouchableOpacity>
-  // </View>
