@@ -11,7 +11,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { globalStyles } from './styles/global';
 import HomeScreen from "./screens/home";
 import LoginScreen from "./screens/login";
-import MonthsScreen from "./screens/months";
 import HelpScreen from "./screens/helpPage";
 import Header from "./shared/header";
 import HelpShared from "./shared/help";
@@ -23,8 +22,6 @@ import SignupScreen from './screens/signup';
 import SignOut from './shared/signout';
 
 import GuestHomeScreen from "./guest_screens/home";
-import GuestMonthsScreen from "./guest_screens/months";
-import GuestHelpScreen from "./guest_screens/helpPage";
 import GuestViewEvent from './guest_screens/view_event';
 
 /* Create a stack for the screens */
@@ -108,10 +105,6 @@ export default function App() {
         })
         } />
 
-        {/* This is the Month filter page */}
-        <Stack.Screen name="Guest Month" component={GuestMonthsScreen} options={{ title: 'Overview' }, ({ navigation }) => ({
-        })
-        } />
 
         {/* This is the Help page to guide users*/}
         <Stack.Screen name="Help Screen" component={HelpScreen} />
