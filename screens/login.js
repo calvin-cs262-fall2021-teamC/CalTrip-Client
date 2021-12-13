@@ -1,5 +1,5 @@
 /*
- * login.js was created to be the landing page of the application allowing users to signup, continue as a guest, or login. 
+ * login.js was created to be the landing page of the application allowing users to signup, continue as a guest, or login.
  * Navigation [FROM] landing page [TO] home.js, signup.js, helpPage.js
  * login.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
 */
@@ -49,13 +49,13 @@ export default function LoginScreen({ navigation }) {
     .catch((err) => alert(err))
   }
 
-  const login = () => {
-    navigation.reset({
-      index:0
-    })
-    navigation.navigate("Home", {})
-
-  }
+//  const login = () => {
+//    navigation.reset({
+//      index:0
+//    })
+//    navigation.navigate("Home", {})
+//
+//  }
   return (
     <View style={loginStyles.container}>
 
@@ -92,7 +92,6 @@ export default function LoginScreen({ navigation }) {
               if (isLoginCorrect) {
                 navigation.replace('Home', {})
               }
-
           }}>
           </Button>
         </View>

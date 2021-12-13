@@ -97,12 +97,6 @@ else {
                 />
             </View>
 
-            {/* Create the Repeat password text box */}
-            <View style={signupStyles.createEventInputBox}>
-              <Text style={signupStyles.subTitle}>Repeat Password</Text>
-              <TextInput secureTextEntry={true} style={signupStyles.inputBox}
-                />
-            </View>
 
         </ScrollView>
       </View>
