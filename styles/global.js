@@ -1,3 +1,9 @@
+/* global.js was created as a stylesheet for the entire app. Once the file became 
+ *  large enough we seperated the stlye sheets into their respective pages but maintained
+ *  global.js for some of the general screen CSS.
+ * global.js was created by team CalTrip as a part of CS-262 at Calvin University. 
+ *  The project was completed on 12/13/21.
+ */
 import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({

@@ -1,3 +1,7 @@
+/* help_style.js was created as a stylesheet for the help screen.
+ * help_style.js was created by team CalTrip as a part of CS-262 at Calvin University. 
+ *  The project was completed on 12/13/21.
+ */
 import { StyleSheet } from 'react-native';
 
 export const helpStyles = StyleSheet.create({
