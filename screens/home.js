@@ -1,5 +1,5 @@
 /*
- * home.js was created to display the events available to the users using GET from the database. It also is the “post sign-in” hub for 
+ * home.js was created to display the events available to the users using GET from the database. It also is the “post sign-in” hub for
  * all of the functions of the application (creating an event, account accessibility, viewing an event and help screen).
  * Navigation [FROM] *.js [TO] *.js
  * home.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
@@ -15,6 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 /*
  * The function HomeScreen() creates the homepage that diplays the events.
 */
+
 export default function HomeScreen({ navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -35,7 +36,6 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={homeStyles.homepage}>
-
       {/* Create a scrollview list of events */}
       <ScrollView>
         {isLoading ? <ActivityIndicator /> : (
