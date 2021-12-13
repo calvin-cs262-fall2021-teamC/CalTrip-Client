@@ -5,8 +5,8 @@
 */
 
 
-import React from 'react';
-import { Image, View, Button, Text, Alert } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { ActivityIndicator, Image, View, Button, Text, Alert, FlatList } from 'react-native';
 import { accountStyles } from '../styles/account_style';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CommonActions } from '@react-navigation/native';
@@ -16,6 +16,9 @@ import { CommonActions } from '@react-navigation/native';
  * The function Account() creates all the displayed information on the Account page.
 */
 export default function Account({ route, navigation }) {
+
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   //const prac = () => {
   //  AsyncStorage.getItem('emailAddress')
@@ -76,6 +79,18 @@ export default function Account({ route, navigation }) {
     )
   }
 
+
+
+  useEffect(async () => {
+    const emailAddress = await AsyncStorage.getItem('emailAddress')
+    fetch("https://caltrip-service.herokuapp.com/users/"+emailAddress)
+    .then((response) => response.json())
+    .then((json) => setData(json))
+    .catch((error) => console.error(error))
+    .finally(() => setLoading(false));
+  }, []);
+
+
   return (
     <View style={accountStyles.account}>
       <View style={accountStyles.accountInfoContainer}>
@@ -88,13 +103,14 @@ export default function Account({ route, navigation }) {
           }}
         />
         </View>
-
          {/* Display the personal information */}
         <View style={accountStyles.accountInfo}>
-          <Text style={accountStyles.accountInfo}>John White</Text>
-          <Text style={accountStyles.accountInfo}>js@students.calvin.edu</Text>
-          <Text style={accountStyles.accountInfo}>123-456-7891</Text>
+
+          <Text style={accountStyles.accountInfo}>Email: {data.emailaddress}</Text>
+          <Text style={accountStyles.accountInfo}>Last name: {data.lastname}</Text>
+          <Text style={accountStyles.accountInfo}>First name: {data.firstname}</Text>
         </View>
+
       </View>
 
       {/* Create a Delete Account button */}
