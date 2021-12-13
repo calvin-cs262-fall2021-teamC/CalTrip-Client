@@ -10,7 +10,6 @@ import { TextInputMask } from 'react-native-masked-text'
 import { eventStyles } from '../styles/event_style';
 import { CommonActions } from '@react-navigation/native';
 
-
 /*
  * The function CreateEvent() performs the action of taking an input and creating an event.
 */
@@ -20,7 +19,6 @@ export default function CreateEvent({ navigation }) {
   const [inputLocation, setLocation] = useState('');
   const [inputPrice, setPrice] = useState('');
   const [inputStartDate, setStartDate] = useState('');
-  const [inputEndDate, setEndDate] = useState('');
   // for event category
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -38,8 +36,7 @@ export default function CreateEvent({ navigation }) {
           description: inputDescription,
           location: inputLocation,
           price: inputPrice,
-          startDate: inputStartDate,
-          endDate: inputEndDate,
+          startdate: inputStartDate,
           category: selectedValue
         })
       });
@@ -47,8 +44,6 @@ export default function CreateEvent({ navigation }) {
     catch (error) {
       console.error(error);
     }
-    const isValid = dateTimeField.isValid()
-    console.log(isValid)
   }
 
   const goHome = () => {
@@ -112,7 +107,7 @@ export default function CreateEvent({ navigation }) {
 
           {/* Start date of the event */}
           <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>Start Date</Text>
+            <Text style={eventStyles.subTitle}>Date</Text>
             <TextInputMask style={eventStyles.inputBox}
               type={'datetime'}
               keyboardType='numeric'
@@ -124,22 +119,6 @@ export default function CreateEvent({ navigation }) {
               placeholder="YYYY/MM/DD"
             />
           </View>
-
-          {/* End date of the event */}
-          <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>End Date</Text>
-            <TextInputMask style={eventStyles.inputBox}
-              type={'datetime'}
-              keyboardType='numeric'
-              options={{
-                format: 'YYYY/MM/DD'
-              }}
-              value={inputEndDate}
-              placeholder="YYYY/MM/DD"
-              onChangeText={number => setEndDate(number)}
-            />
-          </View>
-
         </View>
 
         {/* Create category of events */}

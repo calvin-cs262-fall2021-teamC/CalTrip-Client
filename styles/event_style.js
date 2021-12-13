@@ -52,9 +52,10 @@ export const eventStyles = StyleSheet.create({
 
   bottomWrapper: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     paddingTop: 30,
-    height: 100
+    height: 100,
+    paddingBottom: 40,
   },
 
   createEventPickerBox: {
@@ -70,11 +71,20 @@ export const eventStyles = StyleSheet.create({
      marginBottom:30,
   },
 
+  createEventButton: {
+    paddingBottom: 10,
+    paddingHorizontal: 15
+  },
+
   createEventPickerItem: {
     backgroundColor: "grey",
   },
 
   joinedUsers: {
     textAlign: "center",
+  },
+
+  buttons: {
+    paddingBottom: 10,
   }
 });

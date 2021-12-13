@@ -38,8 +38,7 @@ export default function ViewEvent({ route, navigation }) {
 
         <View style={eventStyles.eventViewTextContainer}>
           <Text style={eventStyles.eventViewEventDescription}>{route.params.description}</Text>
-          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Start Date:</Text> {route.params.startdate}</Text>
-          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>End Date:</Text>{route.params.enddate}</Text>
+          <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Date:</Text> {route.params.to_char}</Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Location:</Text> {route.params.location} </Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}>Price: $</Text> {route.params.price} </Text>
           <Text style={eventStyles.eventViewEventDescription}><Text style={{ fontWeight: "bold" }}> NAME  ||  STATUS  || SEATS AVAILABLE</Text></Text>
@@ -49,7 +48,7 @@ export default function ViewEvent({ route, navigation }) {
               data={data}
               keyExtractor={({ id }, index) => id}
               renderItem={({ item }) => (
-                <Text>{item.firstname} {item.lastname} || {item.status} || {item.seats} seats</Text>
+                <Text style={eventStyles.eventViewEventDescription}>{item.firstname} {item.lastname}   ||      {item.status}      ||     {item.seats}                 </Text>
               )}
             />
           )}
@@ -59,13 +58,24 @@ export default function ViewEvent({ route, navigation }) {
       
       {/* Create a join event button */}
       <View style={eventStyles.bottomWrapper}>
-        <Button
-          color='#75022c'
-          title="Join Event"
-          onPress={() => {
-            //  1. Navigate to the Details route with params
-            navigation.navigate('Join Event');
-          }} />
+        <View style={eventStyles.buttons}>
+          <Button
+            color='#75022c'
+            title="Edit Event"
+            onPress={() => {
+              //  1. Navigate to the Details route with params
+              navigation.navigate('Edit Event');
+            }} />
+        </View>
+        <View style={eventStyles.buttons}>
+          <Button
+            color='#75022c'
+            title="Join Event"
+            onPress={() => {
+              //  1. Navigate to the Details route with params
+              navigation.navigate('Join Event');
+            }} />
+        </View>
       </View>
 
     </View>
