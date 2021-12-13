@@ -20,7 +20,6 @@ export default function CreateEvent({ navigation }) {
   const [inputLocation, setLocation] = useState('');
   const [inputPrice, setPrice] = useState('');
   const [inputStartDate, setStartDate] = useState('');
-  const [inputEndDate, setEndDate] = useState('');
   // for event category
   const [selectedValue, setSelectedValue] = useState('');
 
@@ -39,7 +38,6 @@ export default function CreateEvent({ navigation }) {
           location: inputLocation,
           price: inputPrice,
           startDate: inputStartDate,
-          endDate: inputEndDate,
           category: selectedValue
         })
       });
@@ -125,21 +123,6 @@ export default function CreateEvent({ navigation }) {
             />
           </View>
 
-          {/* End date of the event */}
-          <View style={eventStyles.createEventInputBox}>
-            <Text style={eventStyles.subTitle}>End Date</Text>
-            <TextInputMask style={eventStyles.inputBox}
-              type={'datetime'}
-              keyboardType='numeric'
-              options={{
-                format: 'YYYY/MM/DD'
-              }}
-              value={inputEndDate}
-              placeholder="YYYY/MM/DD"
-              onChangeText={number => setEndDate(number)}
-            />
-          </View>
-
         </View>
 
         {/* Create category of events */}
@@ -174,7 +157,7 @@ export default function CreateEvent({ navigation }) {
       </ScrollView>
 
       {/* Confirm creation of the event */}
-      <View style={eventStyles.bottomWrapper}>
+      <View style={eventStyles.createEventButton}>
         <Button
           marginBottom='5%'
           color='#75022c'
