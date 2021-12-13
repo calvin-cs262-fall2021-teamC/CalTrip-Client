@@ -1,12 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, Image } from 'react-native';
 
-import { globalStyles } from '../styles/global';
-
-
+/*
+ * The function Header() creates a header that redirects to My Account page.
+*/
 export default function Header({ navigation }) {
     return (
         <View>
+            {/* Create a logo for my account */}
             <TouchableOpacity onPress={() => navigation.navigate('My Account')}>
                 <Image
                   style={{ width: 30, height: 30, borderRadius: 30}}

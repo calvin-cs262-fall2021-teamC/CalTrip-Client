@@ -1,12 +1,22 @@
+/*
+ * view _event.js was created to allow users to view the details of the events listed on home.js. The information is displayed using GET and allows users to join said event or return to home.
+ * Navigation [FROM] home.js [TO] join_event.js, home.js, helpPage.js
+ * view_event.js was created by team CalTrip as a part of CS-262 at Calvin University. The project was completed on 12/13/21.
+*/
+
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, View, Text, TextInput, Button, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { eventStyles } from '../styles/event_style';
 import images from '../imageEvent/images'
 
+/*
+ * The function ViewEvent() creates a page for viewing an event.
+*/
 export default function ViewEvent({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
+  {/* Fetches the specific event */}
   useEffect(() => {
     fetch(`https://caltrip-service.herokuapp.com/events/${route.params.id}/users`)
       .then((response) => response.json())
@@ -17,6 +27,8 @@ export default function ViewEvent({ route, navigation }) {
 
   return (
     <View style={eventStyles.contentContainer}>
+
+      {/* Displays the event information */}
       <View style={eventStyles.default}>
         <Image
           style={{ width: "100%", height: 200 }}
@@ -44,10 +56,8 @@ export default function ViewEvent({ route, navigation }) {
         
         </View>
       </View>
-
-
-
-
+      
+      {/* Create a join event button */}
       <View style={eventStyles.bottomWrapper}>
         <Button
           color='#75022c'
@@ -57,7 +67,6 @@ export default function ViewEvent({ route, navigation }) {
             navigation.navigate('Join Event');
           }} />
       </View>
-
 
     </View>
 

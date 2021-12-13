@@ -4,7 +4,9 @@ import { CommonActions } from '@react-navigation/native';
 
 import { globalStyles } from '../styles/global';
 
-
+/*
+ * The function Signout() creates a way to signout of your account.
+*/
 export default function SignOut({ navigation }) {
 
   const signout = () => {
@@ -18,6 +20,7 @@ export default function SignOut({ navigation }) {
     )
   };
 
+  {/* Confirm the signout option */}
   const signout_check = () => {
     Alert.alert(
       "Are you sure you would like to log out?",
@@ -35,11 +38,12 @@ export default function SignOut({ navigation }) {
     return (
         <View style={{flexDirection: 'row'}}>
 
-
+          {/* Help Screen */}
           <TouchableOpacity onPress={() => navigation.navigate('Help Screen')}>
               <Text style={{fontSize: 20, paddingRight: 20}}>Help</Text>
           </TouchableOpacity>
 
+          {/* Creates the logout check */}
           <View>
             <TouchableOpacity onPress = { signout_check }>
             <Image
