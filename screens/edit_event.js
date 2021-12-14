@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
  * The function CreateEvent() performs the action of taking an input and creating an event.
 */
 export default function EditEvent({ route, navigation }) {
-    const [editTitle, changeTitle] = useState('');
+    const [editTitle, changeTitle] = useState(route.params.event.title);
     const [editDescription, changeDescription] = useState('');
     const [editLocation, changeLocation] = useState('');
     const [editPrice, changePrice] = useState('');
@@ -18,8 +18,8 @@ export default function EditEvent({ route, navigation }) {
     const [editSelectedValue, changeSelectedValue] = useState('');
 
     const changeData = async () => {
-        // const id = await AsyncStorage.getItem('id')
-        fetch(("https://caltrip-service.herokuapp.com/events/1"), {
+        const id = await AsyncStorage.getItem('id')
+        fetch((`https://caltrip-service.herokuapp.com/events/1`), {
             method: "PUT",
             headers: {
                 Accept: 'application/json',
@@ -31,7 +31,7 @@ export default function EditEvent({ route, navigation }) {
                 description: editDescription,
                 location: editLocation,
                 price: editPrice,
-                startDate: editStartDate,
+                to_char: editStartDate,
                 category: editSelectedValue
             })
         })
